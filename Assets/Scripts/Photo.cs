@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class Photo : MonoBehaviour
@@ -26,7 +28,6 @@ public class Photo : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EjectOverSeconds(1.5f));
-      //  StartCoroutine(CheckIfPickedUp());
     }
 
     public IEnumerator EjectOverSeconds(float seconds)
@@ -55,13 +56,13 @@ public class Photo : MonoBehaviour
                 EnablePhysics();
 
                 isFirstPickup = true;
-                
+
                 Debug.Log("Picked up");
             }
-            
+
             Debug.Log("Not picked up");
 
-            yield return null;    
+            yield return null;
         }
     }
 
@@ -71,6 +72,8 @@ public class Photo : MonoBehaviour
         imageRenderer.material.color = Color.white;
         imageRenderer.material.mainTexture = texture;
     }
+
+   
 
     public void EnablePhysics()
     {

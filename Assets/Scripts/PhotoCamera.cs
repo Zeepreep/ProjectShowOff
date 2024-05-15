@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,17 +9,20 @@ public class PhotoCamera : MonoBehaviour
     public GameObject photoPrefab;
     public MeshRenderer screenRenderer;
     public Transform photoSpawnPosition;
-    public TextMeshProUGUI  detectionText; // Reference to the text UI element for detection status
-
-    TargerManagement targetManager;
+    public TextMeshProUGUI detectionText; // Reference to the text UI element for detection status
 
     private Camera photoCamera;
 
-    private Texture2D photo;
+
+    [SerializeField]
+    CatSpawner catSpawner;
+
+    public bool catPhotographed;
+
 
     private void Awake()
     {
-        photoCamera = GetComponentInChildren<UnityEngine.Camera>();
+        photoCamera = GetComponentInChildren<Camera>();
     }
 
     private void Start()
@@ -31,8 +33,7 @@ public class PhotoCamera : MonoBehaviour
 
     public void CreateRenderTexture()
     {
-        RenderTexture newTexture =
-            new RenderTexture(256, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
+        RenderTexture newTexture = new RenderTexture(256, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
         newTexture.antiAliasing = 4;
 
         photoCamera.targetTexture = newTexture;
@@ -43,16 +44,15 @@ public class PhotoCamera : MonoBehaviour
     {
         Photo newPhoto = CreatePhoto();
         SetPhotoImage(newPhoto);
+        SetDetectionStatus(newPhoto);
 
-        SetText(detectionText);
+        catSpawner.SpawnCat();
     }
 
     private Photo CreatePhoto()
     {
         Quaternion rotationOffset = Quaternion.Euler(0, 0, 180);
-
-        GameObject photoObject =
-            Instantiate(photoPrefab, photoSpawnPosition.position, photoSpawnPosition.rotation * rotationOffset, transform);
+        GameObject photoObject = Instantiate(photoPrefab, photoSpawnPosition.position, photoSpawnPosition.rotation * rotationOffset, transform);
         return photoObject.GetComponent<Photo>();
     }
 
@@ -81,16 +81,18 @@ public class PhotoCamera : MonoBehaviour
         return photo;
     }
 
-    private void SetText(TextMeshProUGUI textObject)
+    private void SetDetectionStatus(Photo photo)
     {
-        if (TargerManagement.Instance.IsVisible(TargerManagement.Instance.cam, TargerManagement.Instance.target)) 
+        if (TargerManagement.Instance.IsVisible(TargerManagement.Instance.cam, TargerManagement.Instance.target))
         {
-            textObject.text = "Cat visible!";
+            detectionText.text = ("Cat visible!");
             Debug.Log("Cat visible");
+
+            catPhotographed = true;
         }
         else
         {
-            textObject.text = "Cat not visible!";
+           detectionText.text = ("Cat not visible!");
             Debug.Log("Cat not visible");
         }
     }

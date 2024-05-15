@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 
 public class TargerManagement : MonoBehaviour
 {
-    public static TargerManagement Instance { get ; private set; }
+    public static TargerManagement Instance { get; private set; }
+    public CatSpawner catSpawner;
 
     private void Awake()
     {
@@ -18,10 +20,17 @@ public class TargerManagement : MonoBehaviour
             Debug.Log("Another instance of this object already exists!");
             Destroy(gameObject);
         }
+
     }
 
     public GameObject target;
     public Camera cam;
+
+
+    void Start()
+    {
+        StartCoroutine(IsCatSeen());
+    }
 
     public bool IsVisible(Camera c, GameObject target)
     {
@@ -38,31 +47,22 @@ public class TargerManagement : MonoBehaviour
         return true;
     }
 
-    private void Start()
-    {
-        StartCoroutine(IsCatSeen());
-    }
-
-
+   
     IEnumerator IsCatSeen()
     {
         while (true)
         {
-             var targetRender = target.GetComponentInChildren<Renderer>();
+            var targetRender = target.GetComponentInChildren<Renderer>();
             if (IsVisible(cam, target))
             {
                 targetRender.material.SetColor("_Color", Color.red);
-              //  Debug.Log("Working");
             }
             else
             {
                 targetRender.material.SetColor("_Color", Color.black);
-              //  Debug.Log("Not Working");
             }
 
             yield return new WaitForEndOfFrame();
         }
-       
     }
-            
 }
