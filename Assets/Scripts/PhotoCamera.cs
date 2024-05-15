@@ -4,19 +4,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PhotoCamera : MonoBehaviour
 {
     public GameObject photoPrefab;
     public MeshRenderer screenRenderer;
     public Transform photoSpawnPosition;
-    public TextMeshProUGUI  detectionText; // Reference to the text UI element for detection status
+    public TextMeshProUGUI detectionText; // Reference to the text UI element for detection status
 
     TargerManagement targetManager;
 
     private Camera photoCamera;
 
     private Texture2D photo;
+
+    public float zoomSpeed = 20f;
+
+    public float minFov = 15f;
+    public float maxFox = 90f;
 
     private void Awake()
     {
@@ -25,6 +31,8 @@ public class PhotoCamera : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(CheckZoom());
+
         CreateRenderTexture();
         TurnOn();
     }
@@ -52,7 +60,8 @@ public class PhotoCamera : MonoBehaviour
         Quaternion rotationOffset = Quaternion.Euler(0, 0, 180);
 
         GameObject photoObject =
-            Instantiate(photoPrefab, photoSpawnPosition.position, photoSpawnPosition.rotation * rotationOffset, transform);
+            Instantiate(photoPrefab, photoSpawnPosition.position, photoSpawnPosition.rotation * rotationOffset,
+                transform);
         return photoObject.GetComponent<Photo>();
     }
 
@@ -83,7 +92,7 @@ public class PhotoCamera : MonoBehaviour
 
     private void SetText(TextMeshProUGUI textObject)
     {
-        if (TargerManagement.Instance.IsVisible(TargerManagement.Instance.cam, TargerManagement.Instance.target)) 
+        if (TargerManagement.Instance.IsVisible(TargerManagement.Instance.cam, TargerManagement.Instance.target))
         {
             textObject.text = "Cat visible!";
             Debug.Log("Cat visible");
@@ -99,5 +108,31 @@ public class PhotoCamera : MonoBehaviour
     {
         photoCamera.enabled = true;
         screenRenderer.material.color = Color.white;
+    }
+
+    public IEnumerator CheckZoom()
+    {
+        while (true)
+        {
+            List<InputDevice> devices = new List<InputDevice>();
+            InputDeviceCharacteristics rightControllerCharacteristics =
+                InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+            InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+
+            if (devices.Count > 0)
+            {
+                InputDevice device = devices[0];
+                Vector2 input;
+                if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out input))
+                {
+                    float zoomInput = input.y;
+
+                    photoCamera.fieldOfView += zoomInput * zoomSpeed * Time.deltaTime;
+                    photoCamera.fieldOfView = Mathf.Clamp(photoCamera.fieldOfView, minFov, maxFox);
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
