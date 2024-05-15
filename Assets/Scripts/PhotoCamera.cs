@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class PhotoCamera : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PhotoCamera : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(CheckZoom());
+
         CreateRenderTexture();
         TurnOn();
     }
@@ -101,5 +104,31 @@ public class PhotoCamera : MonoBehaviour
     {
         photoCamera.enabled = true;
         screenRenderer.material.color = Color.white;
+    }
+
+    public IEnumerator CheckZoom()
+    {
+        while (true)
+        {
+            List<InputDevice> devices = new List<InputDevice>();
+            InputDeviceCharacteristics rightControllerCharacteristics =
+                InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+            InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+
+            if (devices.Count > 0)
+            {
+                InputDevice device = devices[0];
+                Vector2 input;
+                if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out input))
+                {
+                    float zoomInput = input.y;
+
+                    photoCamera.fieldOfView += zoomInput * zoomSpeed * Time.deltaTime;
+                    photoCamera.fieldOfView = Mathf.Clamp(photoCamera.fieldOfView, minFov, maxFox);
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
