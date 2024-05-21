@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Lets Make a VR Game/Scenes/SampleScene.unity
+    guid: de419164325e8654396b33bd42f6e7fc
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f863a05df05473744b7c410bb4f3e279, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5b75f5c8565ed90418df354f68ae852b, type: 2}
