@@ -36,8 +36,17 @@ public class PedestrianSpawner : MonoBehaviour
         int randomIndex = Random.Range(0, pedestrianPrefabs.Length);
         GameObject pedestrianPrefab = pedestrianPrefabs[randomIndex];
 
-        // Instantiate the selected prefab
-        Instantiate(pedestrianPrefab, transform.position, Quaternion.identity);
+        // Ensure the prefab is not affecting the camera
+        GameObject newPedestrian = Instantiate(pedestrianPrefab, transform.position, Quaternion.identity);
+        newPedestrian.name = "Pedestrian_" + currentPedestrianCount;
+
+        // Ensure the new pedestrian does not have a camera component
+        Camera pedestrianCamera = newPedestrian.GetComponentInChildren<Camera>();
+        if (pedestrianCamera != null)
+        {
+            Destroy(pedestrianCamera.gameObject);
+            Debug.LogWarning("Removed unintended camera from pedestrian prefab.");
+        }
 
         // Increase the current pedestrian count
         currentPedestrianCount++;
