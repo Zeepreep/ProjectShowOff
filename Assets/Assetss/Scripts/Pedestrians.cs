@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Pedestrian : MonoBehaviour
+public class Pedestrian : MonoBehaviour
 {
     public float speed = 2.0f;
     public float rotationSpeed = 5.0f;
@@ -46,5 +46,8 @@ public abstract class Pedestrian : MonoBehaviour
         }
     }
 
-    protected abstract Vector3 GetForwardFacingRotation();
+    protected virtual Vector3 GetForwardFacingRotation()
+    {
+        return Vector3.zero;
+    }
 }
