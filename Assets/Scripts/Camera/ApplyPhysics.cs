@@ -7,10 +7,6 @@ public class ApplyPhysics : MonoBehaviour
 {
     private Rigidbody rb;
     
-    private void Start()
-    {
-    }
-    
     public void ApplyPhysicsToRigidbody()
     {
         rb.isKinematic = false;

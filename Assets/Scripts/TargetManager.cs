@@ -8,9 +8,8 @@ using UnityEngine.Serialization;
 public class TargetManager : MonoBehaviour
 {
     public static TargetManager Instance { get; private set; }
-    public CatMover catMover;
-    public GameObject colorChangeObject;
-
+    public Camera cam;
+    
     private void Awake()
     {
         if (Instance == null)
@@ -24,10 +23,6 @@ public class TargetManager : MonoBehaviour
         }
 
     }
-
-    public GameObject target;
-    public Camera cam;
-
 
     void Start()
     {
@@ -54,16 +49,20 @@ public class TargetManager : MonoBehaviour
     {
         while (true)
         {
-            var targetRender = colorChangeObject.GetComponent<Renderer>();
-            if (IsVisible(cam, target))
+            CatHandler[] cats = FindObjectsOfType<CatHandler>();
+            foreach (var cat in cats)
             {
-                targetRender.material.SetColor("_Color", Color.red);
+               // var targetRender = cat.gameObject.GetComponent<Renderer>();
+                if (IsVisible(cam, cat.gameObject))
+                {
+                 //   targetRender.material.SetColor("_Color", Color.red);
+                    Debug.Log($"Cat {cat.name} from Quest {cat.quest.questName} is visible");
+                }
+                else
+                {
+                   // targetRender.material.SetColor("_Color", Color.black);
+                }
             }
-            else
-            {
-                targetRender.material.SetColor("_Color", Color.black);
-            }
-
             yield return new WaitForEndOfFrame();
         }
     }

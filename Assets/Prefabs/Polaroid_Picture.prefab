@@ -474,3 +474,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e54f23ba0f7ad4498d25c6b7727d9ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
+=======
+  imageRenderer: {fileID: 6731513890820790283}
+  nonHighlightMaterial: {fileID: 2100000, guid: 49bc6b795b011094fb01d81611bd9b13, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 39935cf241c1d6b488e4e509ad199bac, type: 2}
+  denyMaterial: {fileID: 2100000, guid: 452afcf856089d642aa8fc838ffbb452, type: 2}
+  catPictured: 0
+>>>>>>> Stashed changes

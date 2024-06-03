@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2ee39c7ed13b64e87e5641ca26ea2a, type: 3}
+  m_Name: NewQuests
+  m_EditorClassIdentifier: 
+  quests:
+  - questName: Hello World!
+    questHint: The first cat should be around here somewhere, they can't be far!
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+  - questName: Quest 2
+    questHint: this is an exmaple
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 1
+    isActive: 0
+    isCompleted: 0

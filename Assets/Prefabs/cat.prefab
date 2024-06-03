@@ -124,16 +124,44 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
       insertIndex: -1
+<<<<<<< Updated upstream
       addedObject: {fileID: 6586176101264667426}
     m_AddedComponents: []
+=======
+      addedObject: {fileID: 5787898434964458154}
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
 --- !u!1 &3043552699160844461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2981402980531678212, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
   m_PrefabInstance: {fileID: 8981077903558544209}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!4 &8874778169594014906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
   m_PrefabInstance: {fileID: 8981077903558544209}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!114 &5787898434964458154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098135226149680640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3ac6e9f29dc3c49b265293628b6da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeEffect: {fileID: 3713567998477709566, guid: 648503fb880dc2c4c83e3c426f67f3ba, type: 3}
+  quest:
+    questName: 
+    questHint: 
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+>>>>>>> Stashed changes

@@ -27,21 +27,32 @@ public class CatMover : MonoBehaviour
     
     public void MoveCat()
     {
+<<<<<<< Updated upstream
         Transform nextPos = spawnPoints[Random.Range(0, spawnPoints.Count)];
 
         if (nextPos.transform.position == transform.position)
+=======
+        SoundManager.Instance.PlayCatMeow(transform);
+        
+        if (spawnPoints != null)
+>>>>>>> Stashed changes
         {
-            Debug.Log("The cat is already at that position!");
-            MoveCat();
-        }
-        else
-        {
-            Instantiate(smokeEffect, transform.position, Quaternion.identity);
+            Transform nextPos = spawnPoints[Random.Range(0, spawnPoints.Count)];
             
-            transform.position = nextPos.position;
-            transform.rotation = nextPos.rotation;
+            if (nextPos.transform.position == transform.position)
+            {
+                Debug.Log("The cat is already at that position!");
+                MoveCat();
+            }
+            else
+            {
+                Instantiate(smokeEffect, transform.position, Quaternion.identity);
+            
+                transform.position = nextPos.position;
+                transform.rotation = nextPos.rotation;
+            }
         }
-       
+        
         
         Debug.Log("Moving Cat");
     }
