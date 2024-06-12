@@ -13,17 +13,45 @@ MonoBehaviour:
   m_Name: NewQuests
   m_EditorClassIdentifier: 
   quests:
-  - questName: Hello World!
-    questHint: The first cat should be around here somewhere, they can't be far!
+  - questName: Hello World
+    questHint: The cat has to be around here somewhere, they can't be far!
     questCat: {fileID: 0}
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 0
     isActive: 0
     isCompleted: 0
+    strings:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   - questName: Quest 2
-    questHint: this is an exmaple
+    questHint: Placeholder, Purple Cat!
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+    strings:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - questName: Quest 3
+    questHint: Placeholder, Red Cat!
     questCat: {fileID: 0}
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
     isActive: 0
     isCompleted: 0
+    strings: []

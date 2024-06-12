@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f252ffa294a26742a449261c008d039, type: 2}
+  - {fileID: 4362962105363994262, guid: 61c75b2b981485b4aba289a21697cde1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,7 +223,6 @@ GameObject:
   - component: {fileID: -2379476279984946817}
   - component: {fileID: -593928172297980280}
   - component: {fileID: -3821871921698827806}
-  - component: {fileID: 3154779749643055503}
   m_Layer: 0
   m_Name: Polaroid Picture
   m_TagString: Untagged
@@ -261,6 +260,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageRenderer: {fileID: 6731513890820790283}
+  nonHighlightMaterial: {fileID: 2100000, guid: 49bc6b795b011094fb01d81611bd9b13, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 39935cf241c1d6b488e4e509ad199bac, type: 2}
+  denyMaterial: {fileID: 2100000, guid: 452afcf856089d642aa8fc838ffbb452, type: 2}
+  catPictured: {fileID: 0}
 --- !u!65 &-2379476279984946817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -462,15 +465,3 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &3154779749643055503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4163828575638234426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e54f23ba0f7ad4498d25c6b7727d9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

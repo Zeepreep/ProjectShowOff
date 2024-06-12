@@ -26,7 +26,7 @@ public class TargetManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(IsCatSeen());
+       // StartCoroutine(IsCatSeen());
     }
 
     public bool IsVisible(Camera c, GameObject target)
@@ -49,7 +49,7 @@ public class TargetManager : MonoBehaviour
     {
         while (true)
         {
-            CatHandler[] cats = FindObjectsOfType<CatHandler>();
+            CatScript[] cats = FindObjectsOfType<CatScript>();
             foreach (var cat in cats)
             {
                // var targetRender = cat.gameObject.GetComponent<Renderer>();

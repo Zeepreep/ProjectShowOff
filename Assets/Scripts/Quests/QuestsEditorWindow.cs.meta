@@ -3,7 +3,10 @@ guid: aadfc2b134384ed4b9a83f27a0fb4c85
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - photoSpotPrefab: {fileID: 6729586826417196733, guid: 63ace664231e65e4e82788d85d815671, type: 3}
+  - catPrefab: {fileID: 8098135226149680640, guid: 52b80758312ba24428373473faeca5fb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

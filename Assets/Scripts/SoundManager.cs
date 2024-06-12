@@ -61,6 +61,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip constructionSounds;
 
     #endregion
+    
+    #region UI Sounds
+    
+    [Header("UI Sounds")] 
+    
+    public AudioClip buttonClick;
+    
+    #endregion
 
 
     #region Camera Sounds Methods
@@ -129,6 +137,15 @@ public class SoundManager : MonoBehaviour
         PlaySoundEffectAtPoint(constructionSounds, soundPosition);
     }
 
+    #endregion
+    
+    #region UI Sounds Methods
+    
+    public void PlayButtonClick(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(buttonClick, soundPosition);
+    }
+    
     #endregion
 
 

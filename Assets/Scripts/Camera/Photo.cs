@@ -13,7 +13,7 @@ public class Photo : MonoBehaviour
     public Material highlightMaterial = null;
     public Material denyMaterial = null;
 
-    [Header("Debug Options")] public CatHandler catPictured;
+    [Header("Debug Options")] public CatScript catPictured;
 
     private Collider currentCollider = null;
     private ApplyPhysics applyPhysics = null;
@@ -40,13 +40,9 @@ public class Photo : MonoBehaviour
 
     public IEnumerator EjectOverSeconds(float seconds)
     {
-<<<<<<< Updated upstream:Assets/Scripts/Camera/Photo.cs
-        DisablePhysics();
-=======
         // DisablePhysics();
         SoundManager.Instance.PlayPhotoPrint(transform);
 
->>>>>>> Stashed changes:Assets/Scripts/Photo.cs
         currentCollider.enabled = false;
 
         float elapsedTime = 0;
@@ -61,7 +57,7 @@ public class Photo : MonoBehaviour
         currentCollider.enabled = true;
     }
 
-    public void SetImage(Texture2D texture, CatHandler pCatPictured)
+    public void SetImage(Texture2D texture, CatScript pCatPictured)
     {
         imageRenderer.material.color = Color.white;
         imageRenderer.material.mainTexture = texture;
@@ -139,7 +135,13 @@ public class Photo : MonoBehaviour
 
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
 
-            lastCollidedObject.GameObject().SetActive(false);
+            Debug.Log(lastCollidedObject.name);
+            
+            lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().quest.isCompleted = true;
+            lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().CreateTexts();
+            
+            lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
+            
         }
 
         rb.useGravity = true;

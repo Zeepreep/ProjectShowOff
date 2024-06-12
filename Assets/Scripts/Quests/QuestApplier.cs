@@ -39,11 +39,13 @@ namespace Management
             #region Quests Applied Settings
             
             Debug.Log("Applying Settings for Quests");
-
+            
             foreach (Quest quest in quests.quests)
             {
                 if (quest.questPhotoSpot != null)
                 {
+                    Debug.Log("Creating Quests Text");
+                    
                     quest.questPhotoSpot.CreateTexts();
                     quest.questPhotoSpot.quest = quest;
                 }
@@ -61,7 +63,7 @@ namespace Management
                     Debug.LogWarning(quest.questName + " does not have a Cat assigned");
                 }
             }
-
+            
             #endregion
             
         }

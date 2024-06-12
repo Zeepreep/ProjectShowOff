@@ -7,29 +7,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CameraInteractionScript : MonoBehaviour
 {
-<<<<<<< Updated upstream:Assets/Scripts/Camera/CameraInteractionScript.cs
-   public PhotoCamera PhotoCamera;
-   public ParticleSystem particles;
-   
-   private void Start()
-   {
-      XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
-      grabInteractable.activated.AddListener(x => StartParticles()); 
-      grabInteractable.deactivated.AddListener(x => StopParticles());
-   }
-
-   private void StartParticles()
-   {
-      PhotoCamera.TakePhoto();
-      particles.Play();
-   }
-
-   void StopParticles()
-   {
-       particles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-   }
-}
-=======
     public PhotoCamera PhotoCamera;
     private XRGrabInteractable grabInteractable;
     private Rigidbody rb;
@@ -43,7 +20,7 @@ public class CameraInteractionScript : MonoBehaviour
         grabInteractable.selectEntered.AddListener(x => OnGrabbed());
         grabInteractable.selectExited.AddListener(x => OnReleased());
 
-        
+
         grabInteractable.activated.AddListener(x => TriggerPressed());
     }
 
@@ -51,16 +28,14 @@ public class CameraInteractionScript : MonoBehaviour
     {
         rb.useGravity = true;
     }
-    
-   private void OnReleased()
+
+    private void OnReleased()
     {
         rb.useGravity = true;
     }
-    
+
     private void TriggerPressed()
     {
         PhotoCamera.TakePhoto();
     }
-    
 }
->>>>>>> Stashed changes:Assets/Scripts/CameraInteractionScript.cs

@@ -15,15 +15,15 @@ public class PhotoCamera : MonoBehaviour
     [Header("Photo Camera Inserts")] public GameObject photoPrefab;
     public MeshRenderer screenRenderer;
     public Transform photoSpawnPosition;
-    public TextMeshProUGUI detectionText;
+    //public TextMeshProUGUI detectionText;
     public Transform cameraSpawnPosition;
 
-    public float collisionSphereSize;
+    public float collisionSphereSize = 1.2f;
 
     private Camera photoCamera;
-    private float zoomSpeed = 20f;
-    private float minFov = 25f;
-    private float maxFox = 200f;
+    private float zoomSpeed = 30f;
+    private float minFov = 5f;
+    private float maxFox = 180f;
 
     private void Awake()
     {
@@ -60,13 +60,10 @@ public class PhotoCamera : MonoBehaviour
     {
         Photo newPhoto = CreatePhoto();
         SetPhotoImage(newPhoto);
-<<<<<<< Updated upstream
-        SetDetectionStatus(newPhoto);
-=======
         //UpdateDebugText(newPhoto);
 
         // Check if the pictured cat is associated with an active quest
-        CatHandler picturedCat = GetPicturedCat();
+        CatScript picturedCat = GetPicturedCat();
         if (picturedCat != null && picturedCat.quest != null)
         {
             picturedCat.CatPhotographed();
@@ -80,7 +77,6 @@ public class PhotoCamera : MonoBehaviour
         }
 
         SoundManager.Instance.PlayCameraShutter(transform);
->>>>>>> Stashed changes
     }
 
     /// <summary>
@@ -107,7 +103,7 @@ public class PhotoCamera : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Photo object exists!");
+            Debug.Log("No Photo object exists or no cat was in the picture!");
         }
     }
 
@@ -131,9 +127,9 @@ public class PhotoCamera : MonoBehaviour
     /// Used to check if any Cat is currently in the viewfinder camera.
     /// </summary>
     /// <returns>cat</returns>
-    private CatHandler GetPicturedCat()
+    private CatScript GetPicturedCat()
     {
-        CatHandler[] cats = FindObjectsOfType<CatHandler>();
+        CatScript[] cats = FindObjectsOfType<CatScript>();
         foreach (var cat in cats)
         {
             if (TargetManager.Instance.IsVisible(TargetManager.Instance.cam, cat.gameObject))
@@ -142,6 +138,7 @@ public class PhotoCamera : MonoBehaviour
             }
         }
 
+        Debug.Log("No cat in viewfinder!");
         return null;
     }
 
@@ -153,12 +150,10 @@ public class PhotoCamera : MonoBehaviour
     {
         if (photo.catPictured)
         {
-            detectionText.text = ("Cat visible!");
             Debug.Log("Cat visible");
         }
         else
         {
-            detectionText.text = ("Cat not visible!");
             Debug.Log("Cat not visible");
         }
     }

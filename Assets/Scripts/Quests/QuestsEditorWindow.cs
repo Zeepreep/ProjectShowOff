@@ -10,6 +10,8 @@ public class QuestsEditorWindow : EditorWindow
     private static Quests quests;
     private QuestApplier _questApplier;
 
+    public GameObject stringPrefab;
+
     [MenuItem("Window/Quests Editor")]
     public static void ShowWindow()
     {
@@ -118,17 +120,21 @@ public class QuestsEditorWindow : EditorWindow
         if (_questApplier != null)
         {
             _questApplier.ApplySettings(quests);
+
+            if (quests != null)
+            {
+                CreateStrings();
+            }
         }
+
         else
+
         {
             Debug.LogWarning("No QuestApplier");
         }
     }
 
     private Vector2 scrollPosition;
-    private bool questSettingsFoldout = false;
-    private bool quest1Foldout = false;
-    private bool quest2Foldout = false;
 
 
     private void DisplayParameters()
@@ -137,10 +143,17 @@ public class QuestsEditorWindow : EditorWindow
 
         GUILayout.Space(15);
 
+        EditorGUILayout.LabelField("Editor Inputs", EditorStyles.boldLabel);
+
+        stringPrefab =
+            EditorGUILayout.ObjectField("String Prefab", stringPrefab, typeof(GameObject), true) as GameObject;
+
+        GUILayout.Space(10);
+
         // Create a header to display quest settings
         EditorGUILayout.LabelField("Quest Settings", EditorStyles.boldLabel);
 
-        GUILayout.Space(15);
+        GUILayout.Space(10);
 
         for (int i = 0; i < quests.quests.Count; i++)
         {
@@ -156,7 +169,7 @@ public class QuestsEditorWindow : EditorWindow
                     typeof(PhotoSpot), true);
 
             quest.questCat =
-                (CatHandler)EditorGUILayout.ObjectField("Quest Cat", quest.questCat, typeof(CatHandler), true);
+                (CatScript)EditorGUILayout.ObjectField("Quest Cat", quest.questCat, typeof(CatScript), true);
             quest.correspondingLevel = EditorGUILayout.IntField("Corresponding Level", quest.correspondingLevel);
 
             GUILayout.Space(10);
@@ -165,7 +178,7 @@ public class QuestsEditorWindow : EditorWindow
 
             quest.isActive = EditorGUILayout.Toggle("Is Active", quest.isActive);
             quest.isCompleted = EditorGUILayout.Toggle("Is Completed", quest.isCompleted);
-            
+
             GUILayout.Space(10);
         }
 
@@ -181,4 +194,94 @@ public class QuestsEditorWindow : EditorWindow
 
         EditorGUILayout.EndScrollView();
     }
+
+    private void CreateStrings()
+    {
+        if (stringPrefab == null)
+        {
+            Debug.LogError("String prefab is not assigned");
+            return;
+        }
+
+        for (int i = 0; i < quests.quests.Count - 1; i++)
+        {
+            Quest quest1 = quests.quests[i];
+            Quest quest2 = quests.quests[i + 1];
+
+            if (quest1.questPhotoSpot != null && quest2.questPhotoSpot != null)
+            {
+                if (!quest1.questPhotoSpot.HasStringTo(quest2.questPhotoSpot) &&
+                    !quest2.questPhotoSpot.HasStringTo(quest1.questPhotoSpot))
+                {
+                    GameObject newString = Instantiate(stringPrefab);
+
+                    if (newString == null)
+                    {
+                        Debug.LogError("Failed to instantiate string prefab");
+                        continue;
+                    }
+
+                    StringScript stringScript = newString.GetComponent<StringScript>();
+
+                    if (stringScript == null)
+                    {
+                        Debug.LogError("String prefab does not have a StringScript component");
+                        continue;
+                    }
+
+                    Vector3 position = (quest1.questPhotoSpot.transform.position +
+                                        quest2.questPhotoSpot.transform.position) / 2;
+
+                    Vector3 direction = quest1.questPhotoSpot.transform.position -
+                                        quest2.questPhotoSpot.transform.position;
+
+                    Quaternion rotationOffset = Quaternion.Euler(-90, 0, 0);
+
+                    Quaternion rotation = Quaternion.LookRotation(direction) * rotationOffset;
+
+                    float distance = Vector3.Distance(quest1.questPhotoSpot.transform.position,
+                        quest2.questPhotoSpot.transform.position);
+                    Vector3 scale = new Vector3(0.1f, distance / 2,
+                        0.1f);
+
+                    newString.transform.position = position;
+                    newString.transform.rotation = rotation;
+                    newString.transform.localScale = scale;
+
+                    // Parent the new string to the PhotoSpot objects
+                    newString.transform.parent = quest1.questPhotoSpot.transform;
+
+                    // Set the ends of the string
+                    stringScript.SetEnds(quest1.questPhotoSpot, quest2.questPhotoSpot);
+                }
+                else
+                {
+                    Debug.Log("Update Strings");
+                    UpdateStrings();
+                }
+            }
+        }
+    }
+    
+    private void UpdateStrings()
+    {
+        for (int i = 0; i < quests.quests.Count - 1; i++)
+        {
+            Quest quest1 = quests.quests[i];
+            Quest quest2 = quests.quests[i + 1];
+
+            if (quest1.questPhotoSpot != null && quest2.questPhotoSpot != null)
+            {
+                foreach (Transform child in quest1.questPhotoSpot.transform)
+                {
+                    StringScript stringScript = child.GetComponent<StringScript>();
+                    if (stringScript != null && (stringScript.end1 == quest2.questPhotoSpot || stringScript.end2 == quest2.questPhotoSpot))
+                    {
+                        stringScript.UpdateString();
+                    }
+                }
+            }
+        }
+    }
+
 }

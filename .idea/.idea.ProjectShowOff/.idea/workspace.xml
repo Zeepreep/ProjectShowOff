@@ -6,22 +6,43 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5a8da4-835c-4394-b4ce-3c8f3f0b598b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Polaroid_Picture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Polaroid_Picture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CatHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CatHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Black.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Black.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/CMGaTo/Quest 2 Cat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/CMGaTo/Quest 2 Cat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model Assets/camera fbx.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model Assets/camera fbx.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhotoSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoSpot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PhotoSpot.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoSpot.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactable_Instant_Camera.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactable_Instant_Camera.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/cat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cmgato/textures/MainCat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cmgato/textures/MainCat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cmgato.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/cmgato.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Quests/NewQuests.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Quests/NewQuests.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/project.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ApplyPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ApplyPhysics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraInteractionScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraInteractionScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraInteractionScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraInteractionScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Photo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/PhotoCamera.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/PhotoCamera.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatMover.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Photo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatScript.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/Quests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quests/Quests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TargetManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +54,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/42/8211da67/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PhotoSpot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CatMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PhotoSpot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@14.0.11/Runtime/Lighting/Shadow/HDShadowManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualeffectgraph@14.0.11/Editor/Core/VFXLibrary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/AffordanceSystem/Receiver/BaseAsyncAffordanceStateReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/AffordanceSystem/State/Provider/XRInteractableAffordanceStateProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Filtering/Poke/XRPokeFilter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactables/XRSimpleInteractable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -52,8 +76,9 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;traffic-syste,&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Milan&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -126,6 +151,14 @@
       <workItem from="1717082703664" duration="3741000" />
       <workItem from="1717091760601" duration="11781000" />
       <workItem from="1717416967405" duration="7168000" />
+      <workItem from="1717512336872" duration="9000" />
+      <workItem from="1717529332255" duration="1772000" />
+      <workItem from="1717586395448" duration="3402000" />
+      <workItem from="1717590181233" duration="6114000" />
+      <workItem from="1717683881020" duration="8581000" />
+      <workItem from="1717752737398" duration="4965000" />
+      <workItem from="1718009151753" duration="5553000" />
+      <workItem from="1718180498788" duration="2071000" />
     </task>
     <servers />
   </component>
