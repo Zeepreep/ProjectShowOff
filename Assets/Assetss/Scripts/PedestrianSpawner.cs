@@ -8,8 +8,6 @@ public class PedestrianSpawner : MonoBehaviour
     private float timer;
     private int currentPedestrianCount = 0; // Current number of spawned pedestrians
 
-    public WaypointManager waypointManager; // Assign the appropriate WaypointManager
-
     void Update()
     {
         timer += Time.deltaTime;
@@ -48,13 +46,6 @@ public class PedestrianSpawner : MonoBehaviour
         {
             Destroy(pedestrianCamera.gameObject);
             Debug.LogWarning("Removed unintended camera from pedestrian prefab.");
-        }
-
-        // Assign the WaypointManager to the new pedestrian
-        Pedestrian pedestrianScript = newPedestrian.GetComponent<Pedestrian>();
-        if (pedestrianScript != null)
-        {
-            pedestrianScript.waypointManager = waypointManager;
         }
 
         // Increase the current pedestrian count
