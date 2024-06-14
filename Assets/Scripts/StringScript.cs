@@ -1,9 +1,17 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StringScript : MonoBehaviour
 {
     public PhotoSpot end1;
     public PhotoSpot end2;
+
+    private void Start()
+    {
+        //StartCoroutine(SetVisible());
+    }
 
     public void SetEnds(PhotoSpot end1, PhotoSpot end2)
     {
@@ -26,6 +34,28 @@ public class StringScript : MonoBehaviour
             transform.position = position;
             transform.rotation = rotation;
             transform.localScale = scale;
+        }
+    }
+
+    private IEnumerator SetVisible()
+    {
+        while (true)
+        {
+            if ( end1 != null && end2 != null)
+            {
+                if (end1.quest.isCompleted && end2.quest.isCompleted)
+                {
+                    GetComponentInChildren<MeshRenderer>().enabled = true;
+                }
+                else
+                {
+                    GetComponentInChildren<MeshRenderer>().enabled = false;
+                }
+            }
+            else
+            {
+                GetComponentInChildren<MeshRenderer>().enabled = false;
+            }
         }
     }
 }

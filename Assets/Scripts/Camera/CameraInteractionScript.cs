@@ -27,6 +27,8 @@ public class CameraInteractionScript : MonoBehaviour
     private void OnGrabbed()
     {
         rb.useGravity = true;
+        
+        GetComponent<Transform>().SetParent(null);
     }
 
     private void OnReleased()

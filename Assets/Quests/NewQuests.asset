@@ -19,7 +19,7 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 0
     isActive: 0
-    isCompleted: 0
+    isCompleted: 1
     strings:
     - {fileID: 0}
     - {fileID: 0}
@@ -33,7 +33,7 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 0
     isActive: 0
-    isCompleted: 0
+    isCompleted: 1
     strings:
     - {fileID: 0}
     - {fileID: 0}

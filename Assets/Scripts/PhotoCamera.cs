@@ -14,7 +14,9 @@ public class PhotoCamera : MonoBehaviour
 {
     [Header("Photo Camera Inserts")] public GameObject photoPrefab;
     public MeshRenderer screenRenderer;
+
     public Transform photoSpawnPosition;
+
     //public TextMeshProUGUI detectionText;
     public Transform cameraSpawnPosition;
 
@@ -67,7 +69,7 @@ public class PhotoCamera : MonoBehaviour
         if (picturedCat != null && picturedCat.quest != null)
         {
             picturedCat.CatPhotographed();
-            
+
             picturedCat.quest.isCompleted = true;
             Debug.Log($"Quest {picturedCat.quest.questName} is completed");
         }
@@ -212,7 +214,7 @@ public class PhotoCamera : MonoBehaviour
     /// </summary>
     void TeleportCameraBack()
     {
-       // Debug.Log("Teleporting camera back");
+        // Debug.Log("Teleporting camera back");
 
         transform.position = cameraSpawnPosition.position;
         transform.rotation = cameraSpawnPosition.rotation;
@@ -221,6 +223,9 @@ public class PhotoCamera : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+
         rb.useGravity = false;
+
+        transform.SetParent(cameraSpawnPosition);
     }
 }

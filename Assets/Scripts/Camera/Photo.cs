@@ -20,6 +20,7 @@ public class Photo : MonoBehaviour
     private XRGrabInteractable grabInteractable;
 
     private bool isPhotoHangable;
+    private bool isPhotoTrashed;
     private Collider lastCollidedObject;
 
 
@@ -40,7 +41,6 @@ public class Photo : MonoBehaviour
 
     public IEnumerator EjectOverSeconds(float seconds)
     {
-        // DisablePhysics();
         SoundManager.Instance.PlayPhotoPrint(transform);
 
         currentCollider.enabled = false;
@@ -102,6 +102,18 @@ public class Photo : MonoBehaviour
                     sphereRenderer.material = denyMaterial;
                 }
             }
+            else if (Physics.OverlapSphere(transform.position, pictureOverlapSize,
+                         LayerMask.GetMask("TrashSpots")).Length > 0)
+            {
+                lastCollidedObject = Physics.OverlapSphere(transform.position, pictureOverlapSize,
+                    LayerMask.GetMask("TrashSpots"))[0];
+
+                Renderer sphereRenderer = lastCollidedObject.gameObject.GetComponent<Renderer>();
+
+                isPhotoTrashed = true;
+
+                sphereRenderer.material = denyMaterial;
+            }
             else
             {
                 if (lastCollidedObject != null)
@@ -111,6 +123,7 @@ public class Photo : MonoBehaviour
                 }
 
                 isPhotoHangable = false;
+                isPhotoTrashed = false;
             }
 
 
@@ -118,30 +131,57 @@ public class Photo : MonoBehaviour
         }
     }
 
+    public IEnumerator ShredderMovement()
+    {
+        SoundManager.Instance.PlayConstructionSounds(transform);
+
+        float elapsedTime = 0;
+        Vector3 startPosition = 
+            new Vector3(transform.position.x, transform.position.y + 0.04f, transform.position.z); 
+        Vector3 endPosition =
+            new Vector3(transform.position.x, transform.position.y - 0.16f, transform.position.z); 
+
+        while (elapsedTime < 1f) 
+        {
+            transform.position =
+                Vector3.Lerp(startPosition, endPosition, elapsedTime / 2f); 
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1f); // Wait for 2 seconds
+
+        Destroy(gameObject);
+    }
+
     private void OnReleased()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
+        Vector3 hangOffset = new Vector3(90, 180, 0);
 
         transform.parent = null;
 
-        if (isPhotoHangable)
+        if (isPhotoTrashed)
+        {
+            transform.position = lastCollidedObject.transform.position;
+            transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
+            StartCoroutine(ShredderMovement());
+        }
+        else if (isPhotoHangable)
         {
             BoxCollider currentCollider = GetComponent<BoxCollider>();
             currentCollider.enabled = false;
 
             transform.position = lastCollidedObject.transform.position;
 
-            Vector3 hangOffset = new Vector3(90, 180, 0);
-
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
 
             Debug.Log(lastCollidedObject.name);
-            
+
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().quest.isCompleted = true;
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().CreateTexts();
-            
+
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
-            
         }
 
         rb.useGravity = true;

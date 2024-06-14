@@ -178,7 +178,7 @@ public class QuestsEditorWindow : EditorWindow
 
             quest.isActive = EditorGUILayout.Toggle("Is Active", quest.isActive);
             quest.isCompleted = EditorGUILayout.Toggle("Is Completed", quest.isCompleted);
-
+            
             GUILayout.Space(10);
         }
 
