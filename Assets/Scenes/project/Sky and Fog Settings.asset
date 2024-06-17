@@ -60,19 +60,19 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   type:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   sphericalMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   seaLevel:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -9000
   planetaryRadius:
     m_OverrideState: 0
     m_Value: 6378100
   planetCenterPosition:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0, y: -6378100, z: 0}
   airDensityR:
     m_OverrideState: 0
@@ -102,8 +102,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   groundTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.4, g: 0.25, b: 0.15, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.33891064, g: 0.44287553, b: 0.6037736, a: 1}
   groundColorTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 411
+    m_Value: 0
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -194,11 +194,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   maximumHeight:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 23.54
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 11.3
+    m_Value: 6.3
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
     m_Value: 4
   cloudType:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   skyAmbientMode:
     m_OverrideState: 0
     m_Value: 1

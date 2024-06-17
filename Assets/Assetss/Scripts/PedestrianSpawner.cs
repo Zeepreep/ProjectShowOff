@@ -47,7 +47,7 @@ public class PedestrianSpawner : MonoBehaviour
         if (pedestrianCamera != null)
         {
             Destroy(pedestrianCamera.gameObject);
-            Debug.LogWarning("Removed unintended camera from pedestrian prefab.");
+//            Debug.LogWarning("Removed unintended camera from pedestrian prefab.");
         }
 
         // Assign the WaypointManager to the new pedestrian
