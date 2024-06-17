@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: NewQuestsAfterMerge
+  m_EditorClassIdentifier: Assembly-CSharp::Quests
+  quests:
+  - questName: Hello World
+    questHint: Cat 1, the normal one
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: The next quest
+    questHint: Another hint. for the purple one
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: The last quest
+    questHint: once again, hint, for the red one
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+    strings: []

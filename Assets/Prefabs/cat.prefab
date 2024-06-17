@@ -78,14 +78,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6982578104135414559}
+      addedObject: {fileID: 8492227487589011187}
   m_SourcePrefab: {fileID: 100100000, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
 --- !u!1 &8098135226149680640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bb010e1f333caf4a803b5fb4ee7e376, type: 3}
   m_PrefabInstance: {fileID: 8981077903558544209}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-6982578104135414559
+--- !u!114 &8492227487589011187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,8 +94,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8098135226149680640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5c6a2c900cf00469d70836dfc09ac5, type: 3}
+  m_Script: {fileID: 11500000, guid: 648b979dbcb033e4b9e0cbf947976a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
   smokeEffect: {fileID: 3713567998477709566, guid: 648503fb880dc2c4c83e3c426f67f3ba, type: 3}
+  catFound: 0
+  quest:
+    questName: 
+    questHint: 
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 0
+    isActive: 0
+    isCompleted: 0
+    strings: []
