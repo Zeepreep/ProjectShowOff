@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5a8da4-835c-4394-b4ce-3c8f3f0b598b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assetss/Scripts/PedestrianSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assetss/Scripts/PedestrianSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/XR Interaction Setup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/XR Interaction Setup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Interactable Instant Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/project.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/project/Sky and Fog Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project/Sky and Fog Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,8 @@
       <workItem from="1718351652341" duration="2390000" />
       <workItem from="1718354131964" duration="1178000" />
       <workItem from="1718355563552" duration="1742000" />
-      <workItem from="1718625569559" duration="1139000" />
+      <workItem from="1718625569559" duration="1733000" />
+      <workItem from="1718799287897" duration="1353000" />
     </task>
     <servers />
   </component>

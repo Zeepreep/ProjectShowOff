@@ -215,18 +215,20 @@ public class PhotoCamera : MonoBehaviour
     void TeleportCameraBack()
     {
         // Debug.Log("Teleporting camera back");
-
-        transform.position = cameraSpawnPosition.position;
-        transform.rotation = cameraSpawnPosition.rotation;
-
-        Rigidbody rb = GetComponent<Rigidbody>();
         
+        Rigidbody rb = GetComponent<Rigidbody>();
+
+        rb.isKinematic = false;
         
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-
-        rb.useGravity = false;
-
+        
+        transform.position = cameraSpawnPosition.position;
+        transform.rotation = cameraSpawnPosition.rotation;
+        
         transform.SetParent(cameraSpawnPosition);
+
+        // Turn the gravity back on after the camera has been teleported back
+        rb.useGravity = true;
     }
 }
