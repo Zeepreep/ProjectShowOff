@@ -476,7 +476,7 @@ MonoBehaviour:
   screenRenderer: {fileID: 7114605448403062368}
   photoSpawnPosition: {fileID: 8111308245474551034}
   cameraSpawnPosition: {fileID: 0}
-  collisionSphereSize: 4.24
+  collisionSphereSize: 0.25
 --- !u!114 &6195185387210905978
 MonoBehaviour:
   m_ObjectHideFlags: 0
