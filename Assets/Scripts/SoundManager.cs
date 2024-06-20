@@ -112,10 +112,18 @@ public class SoundManager : MonoBehaviour
         PlaySoundEffectAtPoint(carSound2, soundPosition);
     }
 
-    public void PlayWoodPlankCreak(Transform soundPosition = null)
+    public void PlayWoodPlankCreak(Transform soundPosition)
     {
-        PlaySoundEffectAtPoint(woodPlankCreak, soundPosition);
+        if (woodPlankCreak != null)
+        {
+            AudioSource.PlayClipAtPoint(woodPlankCreak, soundPosition.position);
+        }
+        else
+        {
+            Debug.LogError("woodPlankCreak AudioClip is null.");
+        }
     }
+
 
     public void PlayWindThroughLeaves(Transform soundPosition = null)
     {

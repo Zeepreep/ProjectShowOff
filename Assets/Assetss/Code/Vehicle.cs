@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+
 public class Vehicle : MonoBehaviour
 {
     [Header("Wheels")]
@@ -24,6 +26,8 @@ public class Vehicle : MonoBehaviour
     private float zVelocity;
     public bool stop;
 
+    private AudioSource vehicleAudioSource;
+
     public enum DriveBias
     {
         BackWheelDrive,
@@ -46,6 +50,14 @@ public class Vehicle : MonoBehaviour
         randomID = Random.Range(10000, 99999);
         rigid = GetComponent<Rigidbody>();
         currentTarget = GetClosestObjectWithTag(gameObject, "RoadPoint");
+        vehicleAudioSource = GetComponent<AudioSource>();
+        if (vehicleAudioSource == null)
+        {
+            vehicleAudioSource = gameObject.AddComponent<AudioSource>();
+            Debug.Log("AudioSource component was missing and has now been added.");
+
+            vehicleAudioSource.volume = 0.01f; 
+        }
         if (currentTarget != null)
         {
             previousTarget = currentTarget;
@@ -56,10 +68,18 @@ public class Vehicle : MonoBehaviour
     void Start()
     {
         InitializeWheels();
+        PlayVehicleSound();
     }
 
+
+   
     void Update()
     {
+        if (!vehicleAudioSource.isPlaying && rigid.velocity.magnitude > 1f) // Check if the vehicle is moving
+        {
+            PlayVehicleSound(); // Only play sound when the vehicle moves
+        }
+
         zVelocity = transform.InverseTransformDirection(rigid.velocity).z;
 
         if (currentTarget != null)
@@ -97,6 +117,19 @@ public class Vehicle : MonoBehaviour
         HandleSteering();
         HandleDriving();
     }
+    void PlayVehicleSound()
+    {
+        if (SoundManager.Instance != null && SoundManager.Instance.carSound != null)
+        {
+            vehicleAudioSource.clip = SoundManager.Instance.carSound;
+            vehicleAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("Sound clip or SoundManager is not properly set up.");
+        }
+    }
+
 
     void SetFutureTarget()
     {
@@ -372,4 +405,6 @@ public class Vehicle : MonoBehaviour
         }
         return false;
     }
+
+    
 }
