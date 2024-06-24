@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Inputs")] public GameObject LevelAssets;
 
+    [Header("GameObject Inputs")] 
+    public GameObject TutorialText;
+    public GameObject PhotoSpots;
+
     public GameObject[] LevelPositions;
 
     public int currentLevel;
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        PhotoSpots.SetActive(false);
+
         StartCoroutine(ActivateCats());
         PopulateLists();
         //StartCoroutine(AutoChangeLevel());
@@ -94,7 +100,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (CatScript cat in cats)
         {
-            if (cat.quest != null && cat.quest.correspondingLevel == currentLevel)
+            if (cat.quest != null && cat.catCorrespondingLevel == currentLevel)
             {
                 if (!cat.quest.isCompleted)
                 {
@@ -127,8 +133,19 @@ public class GameManager : MonoBehaviour
 
     public void NextLevelButton()
     {
-        if (IsLevelCompleted())
-        {
+        /*if (IsLevelCompleted())
+        {*/
+            if (currentLevel == 0)
+            {
+                Debug.Log("PhotoSpots activated");
+                TutorialText.SetActive(false);
+                PhotoSpots.SetActive(true);
+                SoundManager.Instance.PlayButtonClick();
+
+                currentLevel++;
+                return;
+            }
+
             currentLevel++;
 
             if (currentLevel >= LevelPositions.Length)
@@ -137,19 +154,21 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Debug.Log("Level " + currentLevel + " activated");
+                
                 LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
                 LevelAssets.transform.localPosition = Vector3.zero;
                 LevelAssets.transform.localRotation = Quaternion.identity;
 
-                Debug.Log("Next Level: " + currentLevel);
             }
 
             SoundManager.Instance.PlayButtonClick();
-        }
+        /*}
         else
         {
             SoundManager.Instance.PlayConstructionSounds();
-        }
+            Debug.Log("Not all cats have been found in this level.");
+        }*/
     }
 
     private void Update()

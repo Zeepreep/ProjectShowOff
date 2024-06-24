@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -20,7 +21,7 @@ public class PhotoCamera : MonoBehaviour
     //public TextMeshProUGUI detectionText;
     public Transform cameraSpawnPosition;
 
-    public float collisionSphereSize = 1.2f;
+    private float collisionSphereSize = 0.30f;
 
     private Camera photoCamera;
     private float zoomSpeed = 30f;
@@ -198,7 +199,7 @@ public class PhotoCamera : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.OverlapSphere(photoCamera.transform.position, collisionSphereSize,
+            if (Physics.OverlapSphere(transform.position, collisionSphereSize,
                     LayerMask.GetMask("Building")).Length > 0)
             {
 //                Debug.Log("Camera hit building");
@@ -215,20 +216,18 @@ public class PhotoCamera : MonoBehaviour
     void TeleportCameraBack()
     {
         // Debug.Log("Teleporting camera back");
-        
-        Rigidbody rb = GetComponent<Rigidbody>();
 
-        rb.isKinematic = false;
-        
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        
-        transform.position = cameraSpawnPosition.position;
-        transform.rotation = cameraSpawnPosition.rotation;
+        Rigidbody rb = GetComponent<Rigidbody>();
         
         transform.SetParent(cameraSpawnPosition);
 
-        // Turn the gravity back on after the camera has been teleported back
-        rb.useGravity = true;
+        transform.position = cameraSpawnPosition.position;
+        transform.rotation = cameraSpawnPosition.rotation;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, collisionSphereSize);
     }
 }

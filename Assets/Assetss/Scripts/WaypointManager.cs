@@ -19,7 +19,7 @@ public class WaypointManager : MonoBehaviour
         var filteredWaypoints = waypointObjects.Where(wp => wp.category == category).OrderBy(wp => wp.index).ToArray();
 
         // Log the filtered waypoints for debugging
-        Debug.Log("Filtered waypoints for category " + category + ": " + string.Join(", ", filteredWaypoints.Select(wp => wp.name)));
+//        Debug.Log("Filtered waypoints for category " + category + ": " + string.Join(", ", filteredWaypoints.Select(wp => wp.name)));
 
         // Initialize the waypoints array
         waypoints = new Transform[filteredWaypoints.Length];
@@ -29,6 +29,6 @@ public class WaypointManager : MonoBehaviour
         }
 
         // Log the assigned waypoints for debugging
-        Debug.Log("Assigned waypoints for category " + category + ": " + string.Join(", ", waypoints.Select(wp => wp.name)));
+//        Debug.Log("Assigned waypoints for category " + category + ": " + string.Join(", ", waypoints.Select(wp => wp.name)));
     }
 }

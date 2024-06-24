@@ -48,7 +48,7 @@ public class Photo : MonoBehaviour
         float elapsedTime = 0;
         while (elapsedTime < seconds)
         {
-            transform.position += transform.forward * Time.deltaTime * 0.37f;
+            transform.position += transform.forward * Time.deltaTime * 0.21f;
             elapsedTime += Time.deltaTime;
 
             yield return null;
@@ -85,6 +85,8 @@ public class Photo : MonoBehaviour
                 {
                     sphereRenderer = lastCollidedObject.GameObject().GetComponent<Renderer>();
                     sphereRenderer.material = highlightMaterial;
+                    
+                 //   Debug.Log("Highlighting sphere");
                 }
                 else
                 {
@@ -95,12 +97,15 @@ public class Photo : MonoBehaviour
                 {
                     isPhotoHangable = true;
                     sphereRenderer.material = highlightMaterial;
+                    
+               //     Debug.Log("Photo is hangable");
                 }
                 else
                 {
                     isPhotoHangable = false;
                     sphereRenderer.material = denyMaterial;
                 }
+                
             }
             else if (Physics.OverlapSphere(transform.position, pictureOverlapSize,
                          LayerMask.GetMask("TrashSpots")).Length > 0)
@@ -113,6 +118,8 @@ public class Photo : MonoBehaviour
                 isPhotoTrashed = true;
 
                 sphereRenderer.material = denyMaterial;
+                
+             //   Debug.Log("Photo is trashed");
             }
             else
             {
@@ -124,6 +131,8 @@ public class Photo : MonoBehaviour
 
                 isPhotoHangable = false;
                 isPhotoTrashed = false;
+                
+//                Debug.Log("Photo is not hangable or trashed");
             }
 
 
@@ -191,5 +200,11 @@ public class Photo : MonoBehaviour
         }
 
         rb.useGravity = true;
+    }
+    
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 0.5f);
     }
 }

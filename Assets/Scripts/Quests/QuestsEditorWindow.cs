@@ -59,7 +59,6 @@ public class QuestsEditorWindow : EditorWindow
         {
             SaveQuests();
             ApplyQuests();
-            // Implement logic to apply game settings
         }
 
         GUILayout.EndHorizontal();
@@ -70,7 +69,6 @@ public class QuestsEditorWindow : EditorWindow
             return;
         }
 
-        // Display parameters to edit
         DisplayParameters();
     }
 
@@ -123,10 +121,10 @@ public class QuestsEditorWindow : EditorWindow
         {
             _questApplier.ApplySettings(quests);
 
-            if (quests != null)
+            /*if (quests != null)
             {
                 CreateStrings();
-            }
+            }*/
         }
 
         else
@@ -172,6 +170,7 @@ public class QuestsEditorWindow : EditorWindow
 
             quest.questCat =
                 (CatScript)EditorGUILayout.ObjectField("Quest Cat", quest.questCat, typeof(CatScript), true);
+            
             quest.correspondingLevel = EditorGUILayout.IntField("Corresponding Level", quest.correspondingLevel);
 
             GUILayout.Space(10);

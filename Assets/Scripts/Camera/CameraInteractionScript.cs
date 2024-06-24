@@ -27,11 +27,11 @@ public class CameraInteractionScript : MonoBehaviour
     private void OnGrabbed()
     {
         rb.useGravity = true;
+        transform.parent = null;
     }
 
     private void OnReleased()
     {
-        rb.useGravity = true;
     }
 
     private void TriggerPressed()

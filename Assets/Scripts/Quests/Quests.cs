@@ -6,8 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Quest
 {
-    //debug line
-    
     public string questName;
     public string questHint;
     public CatScript questCat;

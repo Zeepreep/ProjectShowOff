@@ -9,49 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2ee39c7ed13b64e87e5641ca26ea2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 84f82c5f6bd780442bb5361926891116, type: 3}
   m_Name: NewQuests
   m_EditorClassIdentifier: 
-  quests:
-  - questName: Hello World
-    questHint: The cat has to be around here somewhere, they can't be far!
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - questName: Quest 2
-    questHint: Placeholder, Purple Cat!
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - questName: Quest 3
-    questHint: Placeholder, Red Cat!
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 1
-    isActive: 0
-    isCompleted: 0
-    strings: []
+  defaultQuests: {fileID: 11400000, guid: 0ddf2d5bdddbc994581807f499eaff87, type: 2}

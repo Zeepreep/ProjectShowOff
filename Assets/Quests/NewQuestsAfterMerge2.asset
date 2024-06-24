@@ -9,31 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 7ca396e0fc850ce4fb073cf3d0d03ae9, type: 3}
   m_Name: NewQuestsAfterMerge2
   m_EditorClassIdentifier: Assembly-CSharp::Quests
-  quests:
-  - questName: 
-    questHint: 
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings: []
-  - questName: 
-    questHint: 
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings: []
-  - questName: 
-    questHint: 
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings: []
+  quests: []

@@ -59,6 +59,8 @@ namespace Management
                 if (quest.questCat != null)
                 {
                     quest.questCat.quest = quest;
+                    
+                    //quest.questCat.catCorrespondingLevel = quest.correspondingLevel;
                 }
                 else
                 {

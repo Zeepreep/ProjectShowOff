@@ -14,26 +14,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quests:
   - questName: Hello World!
-    questHint: placeholder hint, default cat
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings: []
-  - questName: Quest 2
-    questHint: placeholder hint, green cat
-    questCat: {fileID: 0}
-    questPhotoSpot: {fileID: 0}
-    correspondingLevel: 0
-    isActive: 0
-    isCompleted: 0
-    strings: []
-  - questName: Quest 3
-    questHint: placeholder hint, purple cat
+    questHint: Walking the plank!
     questCat: {fileID: 0}
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: Cat Cult
+    questHint: Cat convention in town, how do I get in?
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 1
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: Forklift Certified
+    questHint: Cat crew on the job
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 2
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: Bus Stop
+    questHint: 3 buses on top of each other
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 2
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: "Can It Get Any More Clich\xE9"
+    questHint: Where cats get stuck
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 2
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: Orange Building
+    questHint: The cat crosses the bridge
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 3
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: Dutch Cat
+    questHint: Need a ride?
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 3
+    isActive: 0
+    isCompleted: 0
+    strings: []
+  - questName: House Party
+    questHint: Blowing the roof off
+    questCat: {fileID: 0}
+    questPhotoSpot: {fileID: 0}
+    correspondingLevel: 3
     isActive: 0
     isCompleted: 0
     strings: []
