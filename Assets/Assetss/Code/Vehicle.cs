@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-
-
 public class Vehicle : MonoBehaviour
 {
     [Header("Wheels")]
@@ -25,8 +23,7 @@ public class Vehicle : MonoBehaviour
     private RaycastHit hit;
     private float zVelocity;
     public bool stop;
-
-    private AudioSource vehicleAudioSource;
+    private bool isSoundPlaying;
 
     public enum DriveBias
     {
@@ -50,37 +47,41 @@ public class Vehicle : MonoBehaviour
         randomID = Random.Range(10000, 99999);
         rigid = GetComponent<Rigidbody>();
         currentTarget = GetClosestObjectWithTag(gameObject, "RoadPoint");
-        vehicleAudioSource = GetComponent<AudioSource>();
-        if (vehicleAudioSource == null)
-        {
-            vehicleAudioSource = gameObject.AddComponent<AudioSource>();
-            Debug.Log("AudioSource component was missing and has now been added.");
 
-            vehicleAudioSource.volume = 0.01f; 
-        }
         if (currentTarget != null)
         {
             previousTarget = currentTarget;
             SetFutureTarget();
         }
+
+        isSoundPlaying = false; // Initialize the sound playing state
     }
 
     void Start()
     {
         InitializeWheels();
-        PlayVehicleSound();
     }
 
-
-   
     void Update()
     {
-        if (!vehicleAudioSource.isPlaying && rigid.velocity.magnitude > 1f) // Check if the vehicle is moving
-        {
-            PlayVehicleSound(); // Only play sound when the vehicle moves
-        }
-
         zVelocity = transform.InverseTransformDirection(rigid.velocity).z;
+
+        if (rigid.velocity.magnitude > 1f)
+        {
+            if (!isSoundPlaying)
+            {
+                SoundManager.Instance.PlayCarEngineSound(gameObject);
+                isSoundPlaying = true;
+            }
+        }
+        else if (rigid.velocity.magnitude <= 1f)
+        {
+            if (isSoundPlaying)
+            {
+                SoundManager.Instance.StopCarEngineSound(gameObject);
+                isSoundPlaying = false;
+            }
+        }
 
         if (currentTarget != null)
         {
@@ -116,31 +117,6 @@ public class Vehicle : MonoBehaviour
 
         HandleSteering();
         HandleDriving();
-    }
-    void PlayVehicleSound()
-    {
-        if (SoundManager.Instance != null && SoundManager.Instance.carSound != null)
-        {
-            vehicleAudioSource.clip = SoundManager.Instance.carSound;
-            vehicleAudioSource.Play();
-        }
-        else
-        {
-            Debug.LogError("Sound clip or SoundManager is not properly set up.");
-        }
-    }
-
-
-    void SetFutureTarget()
-    {
-        if (currentTarget != null && currentTarget.connectedPoints != null && currentTarget.connectedPoints.Count > 0)
-        {
-            futureTarget = currentTarget.connectedPoints[Random.Range(0, currentTarget.connectedPoints.Count)];
-        }
-        else
-        {
-            futureTarget = null;
-        }
     }
 
     void InitializeWheels()
@@ -393,6 +369,18 @@ public class Vehicle : MonoBehaviour
         return closestObject != null ? closestObject.GetComponent<RoadPoint>() : default(RoadPoint);
     }
 
+    void SetFutureTarget()
+    {
+        if (currentTarget != null && currentTarget.connectedPoints != null && currentTarget.connectedPoints.Count > 0)
+        {
+            futureTarget = currentTarget.connectedPoints[Random.Range(0, currentTarget.connectedPoints.Count)];
+        }
+        else
+        {
+            futureTarget = null;
+        }
+    }
+
     bool IsVehicleInCloseProximity()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f); // Adjust the radius as needed
@@ -405,6 +393,4 @@ public class Vehicle : MonoBehaviour
         }
         return false;
     }
-
-    
 }
