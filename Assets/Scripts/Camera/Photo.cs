@@ -193,6 +193,8 @@ public class Photo : MonoBehaviour
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().CreateTexts();
 
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
+            
+            transform.parent = lastCollidedObject.transform;
         }
         else
         {

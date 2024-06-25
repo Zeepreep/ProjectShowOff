@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Header Debugging")] public bool hideOtherLevelCats;
+    [Header("Header Debugging")] 
+    public bool hideOtherLevelCats;
+
+    public bool autoChangeLevels;
 
     [Header("Level Inputs")] public GameObject LevelAssets;
 
@@ -39,11 +42,23 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        PhotoSpots.SetActive(false);
+        if (TutorialText.activeSelf == false)
+        {
+            TutorialText.SetActive(true);
+        }
+        
+        if (PhotoSpots.activeSelf)
+        {
+            PhotoSpots.SetActive(false);
+        }
 
         StartCoroutine(ActivateCats());
         PopulateLists();
-        //StartCoroutine(AutoChangeLevel());
+        
+        if (autoChangeLevels)
+        {
+            StartCoroutine(AutoChangeLevel());
+        }
     }
 
     void PopulateLists()
@@ -74,7 +89,7 @@ public class GameManager : MonoBehaviour
                 {
                     foreach (CatScript cat in cats)
                     {
-                        if (cat.quest.correspondingLevel == currentLevel)
+                        if (cat.catCorrespondingLevel == currentLevel)
                         {
                             if (cat.gameObject.activeSelf == false)
                             {
@@ -133,8 +148,8 @@ public class GameManager : MonoBehaviour
 
     public void NextLevelButton()
     {
-        /*if (IsLevelCompleted())
-        {*/
+        if (IsLevelCompleted())
+        {
             if (currentLevel == 0)
             {
                 Debug.Log("PhotoSpots activated");
@@ -163,12 +178,12 @@ public class GameManager : MonoBehaviour
             }
 
             SoundManager.Instance.PlayButtonClick();
-        /*}
+        }
         else
         {
-            SoundManager.Instance.PlayConstructionSounds();
+            SoundManager.Instance.PlayCatMeow();
             Debug.Log("Not all cats have been found in this level.");
-        }*/
+        }
     }
 
     private void Update()

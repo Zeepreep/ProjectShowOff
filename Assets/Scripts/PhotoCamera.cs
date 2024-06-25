@@ -25,7 +25,7 @@ public class PhotoCamera : MonoBehaviour
 
     private Camera photoCamera;
     private float zoomSpeed = 30f;
-    private float minFov = 5f;
+    private float minFov = 0f;
     private float maxFox = 180f;
 
     private void Awake()
