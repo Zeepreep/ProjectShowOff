@@ -22,13 +22,15 @@ public class SoundManager : MonoBehaviour
     }
 
     #region Camera Sounds
-    [Header("Camera Sounds")] public AudioClip cameraShutter;
+    [Header("Camera Sounds")]
+    public AudioClip cameraShutter;
     public AudioClip photoPrint;
     public AudioClip cameraZoomIn;
     #endregion
 
     #region Background Sounds
-    [Header("Background Sounds")] public AudioClip birdChirp;
+    [Header("Background Sounds")]
+    public AudioClip birdChirp;
     public AudioClip birdFlap;
     public AudioClip carSound;
     public AudioClip carSound2;
@@ -37,6 +39,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip scaffoldingShake;
     public AudioClip catMeow;
     public AudioClip constructionSounds;
+    public AudioClip audioLevelTransition; // New sound
     #endregion
 
     #region UI Sounds
@@ -112,6 +115,11 @@ public class SoundManager : MonoBehaviour
     public void PlayConstructionSounds(Transform soundPosition = null)
     {
         PlaySoundEffectAtPoint(constructionSounds, soundPosition);
+    }
+
+    public void PlayAudioLevelTransition(Transform soundPosition = null) // New method
+    {
+        PlaySoundEffectAtPoint(audioLevelTransition, soundPosition);
     }
     #endregion
 

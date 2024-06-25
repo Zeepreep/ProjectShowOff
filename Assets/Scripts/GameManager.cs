@@ -1,30 +1,29 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Management;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Header Debugging")] 
+    [Header("Header Debugging")]
     public bool hideOtherLevelCats;
-
     public bool autoChangeLevels;
 
-    [Header("Level Inputs")] public GameObject LevelAssets;
+    [Header("Level Inputs")]
+    public GameObject LevelAssets;
 
-    [Header("GameObject Inputs")] 
+    [Header("GameObject Inputs")]
     public GameObject TutorialText;
     public GameObject PhotoSpots;
-
     public GameObject[] LevelPositions;
 
     public int currentLevel;
 
     [HideInInspector] public List<CatScript> cats;
+
+    public CanvasGroup fadeCanvasGroup;
+    public float fadeDuration = 1.0f;
 
     void Awake()
     {
@@ -42,11 +41,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (TutorialText.activeSelf == false)
+        // Set initial alpha to 0 (not dark at the start)
+        fadeCanvasGroup.alpha = 0;
+
+        if (!TutorialText.activeSelf)
         {
             TutorialText.SetActive(true);
         }
-        
+
         if (PhotoSpots.activeSelf)
         {
             PhotoSpots.SetActive(false);
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(ActivateCats());
         PopulateLists();
-        
+
         if (autoChangeLevels)
         {
             StartCoroutine(AutoChangeLevel());
@@ -91,7 +93,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (cat.catCorrespondingLevel == currentLevel)
                         {
-                            if (cat.gameObject.activeSelf == false)
+                            if (!cat.gameObject.activeSelf)
                             {
                                 cat.gameObject.SetActive(true);
                             }
@@ -127,7 +129,6 @@ public class GameManager : MonoBehaviour
         return true;
     }
 
-
     IEnumerator AutoChangeLevel()
     {
         while (true)
@@ -150,34 +151,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsLevelCompleted())
         {
-            if (currentLevel == 0)
-            {
-                Debug.Log("PhotoSpots activated");
-                TutorialText.SetActive(false);
-                PhotoSpots.SetActive(true);
-                SoundManager.Instance.PlayButtonClick();
-
-                currentLevel++;
-                return;
-            }
-
-            currentLevel++;
-
-            if (currentLevel >= LevelPositions.Length)
-            {
-                Debug.LogWarning("No more levels available");
-            }
-            else
-            {
-                Debug.Log("Level " + currentLevel + " activated");
-                
-                LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
-                LevelAssets.transform.localPosition = Vector3.zero;
-                LevelAssets.transform.localRotation = Quaternion.identity;
-
-            }
-
-            SoundManager.Instance.PlayButtonClick();
+            StartCoroutine(FadeAndLoadNextLevel());
         }
         else
         {
@@ -193,5 +167,58 @@ public class GameManager : MonoBehaviour
             Debug.Log("Going to next level through Key Press");
             NextLevelButton();
         }
+    }
+
+    private IEnumerator FadeAndLoadNextLevel()
+    {
+        yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
+
+        // Play the audio level transition sound
+    //    SoundManager.Instance.PlayLevelTransition();
+
+        if (currentLevel == 0)
+        {
+            Debug.Log("PhotoSpots activated");
+            TutorialText.SetActive(false);
+            PhotoSpots.SetActive(true);
+            SoundManager.Instance.PlayButtonClick();
+
+            currentLevel++;
+        }
+        else
+        {
+            currentLevel++;
+
+            if (currentLevel >= LevelPositions.Length)
+            {
+                Debug.LogWarning("No more levels available");
+            }
+            else
+            {
+                Debug.Log("Level " + currentLevel + " activated");
+
+                LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
+                LevelAssets.transform.localPosition = Vector3.zero;
+                LevelAssets.transform.localRotation = Quaternion.identity;
+            }
+
+            SoundManager.Instance.PlayButtonClick();
+        }
+
+        yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark
+    }
+
+    private IEnumerator Fade(float startAlpha, float endAlpha)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        fadeCanvasGroup.alpha = endAlpha;
     }
 }
