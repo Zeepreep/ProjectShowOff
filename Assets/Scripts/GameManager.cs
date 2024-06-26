@@ -171,10 +171,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator FadeAndLoadNextLevel()
     {
-        yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
-
         // Play the audio level transition sound
-    //    SoundManager.Instance.PlayLevelTransition();
+        // SoundManager.Instance.PlayLevelTransition();
 
         if (currentLevel == 0)
         {
@@ -187,6 +185,12 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // Apply fade effect only if transitioning between levels 1 and 3
+            if (currentLevel >= 1 && currentLevel < 3)
+            {
+                yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
+            }
+
             currentLevel++;
 
             if (currentLevel >= LevelPositions.Length)
@@ -203,9 +207,13 @@ public class GameManager : MonoBehaviour
             }
 
             SoundManager.Instance.PlayButtonClick();
-        }
 
-        yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark
+            // Apply fade effect only if transitioning between levels 1 and 3
+            if (currentLevel > 1 && currentLevel <= 3)
+            {
+                yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark
+            }
+        }
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)

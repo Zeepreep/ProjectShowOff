@@ -107,7 +107,7 @@ public class Vehicle : MonoBehaviour
         }
         else if (stoppingPoint == null)
         {
-            stop = CheckForVehiclesInFront();
+            stop = CheckForVehiclesInFront(out float distanceToVehicle);
         }
 
         if (currentTarget == null)
@@ -257,7 +257,7 @@ public class Vehicle : MonoBehaviour
 
     void HandleDriving()
     {
-        bool vehicleInFront = CheckForVehiclesInFront();
+        bool vehicleInFront = CheckForVehiclesInFront(out float distanceToVehicle);
 
         foreach (var wheel in (driveBias == DriveBias.FrontWheelDrive ? frontWheels : backWheels))
         {
@@ -271,7 +271,16 @@ public class Vehicle : MonoBehaviour
             else
             {
                 wheel.motorTorque = 0;
-                wheel.brakeTorque = brakeTorque;
+
+                if (vehicleInFront)
+                {
+                    // Apply brake torque proportional to the distance to the vehicle in front
+                    wheel.brakeTorque = brakeTorque * Mathf.Clamp(1.5f - distanceToVehicle, 0, 1);
+                }
+                else
+                {
+                    wheel.brakeTorque = brakeTorque;
+                }
             }
         }
     }
@@ -300,16 +309,18 @@ public class Vehicle : MonoBehaviour
         return false;
     }
 
-    bool CheckForVehiclesInFront()
+    bool CheckForVehiclesInFront(out float distanceToVehicle)
     {
         ray = new Ray(steeringAim.transform.position, steeringAim.transform.forward);
-        if (Physics.SphereCast(ray, 1f, out hit, 1.5f + (zVelocity * 2)))
+        if (Physics.SphereCast(ray, 1f, out hit, 10f + (zVelocity * 2)))
         {
             if (hit.transform.CompareTag("Vehicle"))
             {
+                distanceToVehicle = Vector3.Distance(steeringAim.transform.position, hit.transform.position);
                 return true;
             }
         }
+        distanceToVehicle = Mathf.Infinity;
         return false;
     }
 
