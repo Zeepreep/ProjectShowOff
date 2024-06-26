@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             Debug.Log("Going to next level through Key Press");
-            NextLevelButton();
+            StartCoroutine(FadeAndLoadNextLevel());
         }
     }
 
