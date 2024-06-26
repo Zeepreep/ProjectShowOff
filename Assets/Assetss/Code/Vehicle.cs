@@ -394,7 +394,7 @@ public class Vehicle : MonoBehaviour
 
     bool IsVehicleInCloseProximity()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f); // Adjust the radius as needed
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 10f); // Adjust the radius as needed
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Vehicle") && hitCollider.gameObject != gameObject)
