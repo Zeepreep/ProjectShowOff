@@ -197,7 +197,7 @@ public class Photo : MonoBehaviour
 
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
             
-            transform.parent = lastCollidedObject.transform;
+            transform.parent = lastCollidedObject.transform.parent;
 
             catPictured.quest.questPhoto = photographDisplayed;
         }

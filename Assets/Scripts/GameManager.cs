@@ -286,6 +286,7 @@ public class GameManager : MonoBehaviour
             if (cat.quest != null && cat.quest.questPhoto != null)
             {
                 allPictures.Add(cat.quest.questPhoto);
+                Debug.Log("Added " + cat.quest.questPhoto.name + " to the possible newspaper pictures list.");
             }
         }
 
