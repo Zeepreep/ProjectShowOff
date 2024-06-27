@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +19,13 @@ public class GameManager : MonoBehaviour
     public GameObject TutorialText;
     public GameObject PhotoSpots;
     public GameObject[] LevelPositions;
+    
+    [Header("Board Inputs")]
+    public TextMeshProUGUI level1CompleteText;
+    public TextMeshProUGUI level2CompleteText;
+    public TextMeshProUGUI level3CompleteText;
+    
+    [Header("Other Stuff")]
 
     public int currentLevel;
 
@@ -55,6 +64,7 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(ActivateCats());
+        StartCoroutine(levelCompleteStatus());
         PopulateLists();
 
         if (autoChangeLevels)
@@ -157,6 +167,45 @@ public class GameManager : MonoBehaviour
         {
             SoundManager.Instance.PlayCatMeow();
             Debug.Log("Not all cats have been found in this level.");
+        }
+    }
+
+    private IEnumerator levelCompleteStatus()
+    {
+        while (true)
+        {
+            if (IsLevelCompleted())
+            {
+                switch (currentLevel)
+                {
+                    case 1:
+                        level1CompleteText.text = "Level 1 Complete!";
+                        break;
+                    case 2:
+                        level2CompleteText.text = "Level 2 Complete!";
+                        break;
+                    case 3:
+                        level3CompleteText.text = "Level 3 Complete!";
+                        break;
+                }
+            }
+            else
+            {
+                switch (currentLevel)
+                {
+                    case 1:
+                        level1CompleteText.text = "Level 1 Incomplete";
+                        break;
+                    case 2:
+                        level2CompleteText.text = "Level 2 Incomplete";
+                        break;
+                    case 3:
+                        level3CompleteText.text = "Level 3 Incomplete";
+                        break;
+                }
+            }
+
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
