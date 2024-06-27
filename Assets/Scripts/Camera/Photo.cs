@@ -179,6 +179,9 @@ public class Photo : MonoBehaviour
         {
             transform.position = lastCollidedObject.transform.position;
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
+            
+            SoundManager.Instance.PlayPaperShredding(transform);
+            
             StartCoroutine(ShredderMovement());
         }
         else if (isPhotoHangable)
@@ -187,8 +190,9 @@ public class Photo : MonoBehaviour
             currentCollider.enabled = false;
 
             transform.position = lastCollidedObject.transform.position;
-
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
+            
+            SoundManager.Instance.PlayPictureHung(transform);
 
             Debug.Log(lastCollidedObject.name);
 

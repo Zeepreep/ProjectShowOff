@@ -39,12 +39,29 @@ public class SoundManager : MonoBehaviour
     public AudioClip scaffoldingShake;
     public AudioClip catMeow;
     public AudioClip constructionSounds;
-    public AudioClip audioLevelTransition; // New sound
+    public AudioClip audioLevelTransition;
     #endregion
 
     #region UI Sounds
     [Header("UI Sounds")]
+    
     public AudioClip buttonClick;
+    public AudioClip errorSound;
+    public AudioClip writingSounds;
+    public AudioClip paperShredding;
+    public AudioClip pictureHung;
+    
+    #endregion
+    
+    #region Voice Over Sounds
+
+    [Header("Voice Over Sounds")] 
+    
+    public AudioClip tutorialVoiceOver;
+    public AudioClip level1VoiceOver;
+    public AudioClip level2VoiceOver;
+    public AudioClip level3VoiceOver;
+    
     #endregion
 
     #region Camera Sounds Methods
@@ -128,6 +145,50 @@ public class SoundManager : MonoBehaviour
     {
         PlaySoundEffectAtPoint(buttonClick, soundPosition);
     }
+    
+    public void PlayErrorSound(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(errorSound, soundPosition);
+    }
+    
+    public void PlayWritingSounds(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(writingSounds, soundPosition);
+    }
+    
+    public void PlayPaperShredding(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(paperShredding, soundPosition);
+    }
+    
+    public void PlayPictureHung(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(pictureHung, soundPosition);
+    }
+    #endregion
+    
+    #region Voice Over Sounds Methods
+    
+    public void PlayTutorialVoiceOver(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(tutorialVoiceOver, soundPosition);
+    }
+    
+    public void PlayLevel1VoiceOver(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(level1VoiceOver, soundPosition);
+    }
+    
+    public void PlayLevel2VoiceOver(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(level2VoiceOver, soundPosition);
+    }
+    
+    public void PlayLevel3VoiceOver(Transform soundPosition = null)
+    {
+        PlaySoundEffectAtPoint(level3VoiceOver, soundPosition);
+    }
+    
     #endregion
 
     private void PlaySoundEffectAtPoint(AudioClip clip, Transform soundPosition)

@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Set initial alpha to 0 (not dark at the start)
         fadeCanvasGroup.alpha = 0;
 
         if (!TutorialText.activeSelf)
@@ -164,7 +163,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SoundManager.Instance.PlayCatMeow();
+            SoundManager.Instance.PlayErrorSound();
             Debug.Log("Not all cats have been found in this level.");
         }
     }
@@ -226,15 +225,13 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator FadeAndLoadNextLevel()
     {
-        // Play the audio level transition sound
-        // SoundManager.Instance.PlayLevelTransition();
-
         if (currentLevel == 0)
         {
             Debug.Log("PhotoSpots activated");
             TutorialText.SetActive(false);
             PhotoSpots.SetActive(true);
             SoundManager.Instance.PlayButtonClick();
+            SoundManager.Instance.PlayWritingSounds(PhotoSpots.transform);
 
             currentLevel++;
         }
@@ -243,7 +240,24 @@ public class GameManager : MonoBehaviour
             // Apply fade effect only if transitioning between levels 1 and 3
             if (currentLevel >= 1 && currentLevel < 3)
             {
+                SoundManager.Instance.PlayAudioLevelTransition();
+                
                 yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
+
+                switch (currentLevel)
+                {
+                    case 1:
+                        SoundManager.Instance.PlayLevel1VoiceOver();
+                        break;  
+                    
+                    case 2:
+                        SoundManager.Instance.PlayLevel2VoiceOver();
+                        break;
+                    
+                    case 3:
+                        SoundManager.Instance.PlayLevel3VoiceOver();
+                        break;
+                }
 
                 PhotoCamera CameraInScene = FindObjectOfType<PhotoCamera>();
 
@@ -270,7 +284,6 @@ public class GameManager : MonoBehaviour
 
             SoundManager.Instance.PlayButtonClick();
 
-            // Apply fade effect only if transitioning between levels 1 and 3
             if (currentLevel > 1 && currentLevel <= 3)
             {
                 yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark

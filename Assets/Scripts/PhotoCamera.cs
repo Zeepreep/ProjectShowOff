@@ -16,11 +16,12 @@ public class PhotoCamera : MonoBehaviour
     private XRGrabInteractable grabInteractable;
     private Rigidbody rb;
     private float zoomSpeed = 30f;
+    
     private float minFov = 0f;
-
     private float maxFov = 180f;
-    private int cameraWidth = 128;
-    private int cameraHeight = 64;
+    
+    private int cameraWidth = 256;
+    private int cameraHeight = 128;
 
     void Awake()
     {
@@ -49,7 +50,7 @@ public class PhotoCamera : MonoBehaviour
 
     IEnumerator MoveCameraToSpawn()
     {
-        float duration = 1.0f;  // Duration over which the camera will return to its position
+        float duration = 0.7f; 
         float elapsedTime = 0f;
 
         Vector3 startPosition = transform.position;
@@ -60,7 +61,6 @@ public class PhotoCamera : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float normalizedTime = elapsedTime / duration;
 
-            // Interpolate position and rotation back to spawn point
             transform.position = Vector3.Lerp(startPosition, cameraSpawnPosition.position, normalizedTime);
             transform.rotation = Quaternion.Lerp(startRotation, cameraSpawnPosition.rotation, normalizedTime);
 
