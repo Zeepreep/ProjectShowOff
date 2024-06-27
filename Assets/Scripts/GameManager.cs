@@ -9,26 +9,34 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Header Debugging")] public bool hideOtherLevelCats;
+    [Header("Header Debugging")]
+    public bool hideOtherLevelCats;
     public bool autoChangeLevels;
 
-    [Header("Level Inputs")] public GameObject LevelAssets;
+    [Header("Level Inputs")]
+    public GameObject LevelAssets;
 
-    [Header("GameObject Inputs")] public GameObject TutorialText;
+    [Header("GameObject Inputs")]
+    public GameObject TutorialText;
     public GameObject PhotoSpots;
     public GameObject[] LevelPositions;
+    public Transform[] CameraSpawnPositions; // Add this line
 
-    [Header("Board Inputs")] public TextMeshProUGUI level1CompleteText;
+    [Header("Board Inputs")]
+    public TextMeshProUGUI level1CompleteText;
     public TextMeshProUGUI level2CompleteText;
     public TextMeshProUGUI level3CompleteText;
 
-    [Header("Newspaper Prefab")] public GameObject newspaperPrefab;
+    [Header("Newspaper Prefab")]
+    public GameObject newspaperPrefab;
 
     public GameObject newspaperPosition;
 
-    [Header("Other Stuff")] public int currentLevel;
+    [Header("Other Stuff")]
+    public int currentLevel;
 
-    [HideInInspector] public List<CatScript> cats;
+    [HideInInspector]
+    public List<CatScript> cats;
 
     public CanvasGroup fadeCanvasGroup;
     public float fadeDuration = 1.0f;
@@ -49,7 +57,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Set initial alpha to 0 (not dark at the start)
         fadeCanvasGroup.alpha = 0;
 
         if (!TutorialText.activeSelf)
@@ -145,6 +152,7 @@ public class GameManager : MonoBehaviour
             if (IsLevelCompleted())
             {
                 currentLevel++;
+                UpdateCameraPosition(); // Add this line
             }
 
             yield return new WaitForSeconds(0.2f);
@@ -154,6 +162,7 @@ public class GameManager : MonoBehaviour
     public void SetLevel(int level)
     {
         currentLevel = level;
+        UpdateCameraPosition(); // Add this line
     }
 
     public void NextLevelButton()
@@ -188,7 +197,6 @@ public class GameManager : MonoBehaviour
                     case 3:
                         level3CompleteText.text = "Complete!";
                         level3CompleteText.color = Color.green;
-
                         break;
                 }
             }
@@ -226,9 +234,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator FadeAndLoadNextLevel()
     {
-        // Play the audio level transition sound
-        // SoundManager.Instance.PlayLevelTransition();
-
         if (currentLevel == 0)
         {
             Debug.Log("PhotoSpots activated");
@@ -240,10 +245,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Apply fade effect only if transitioning between levels 1 and 3
             if (currentLevel >= 1 && currentLevel < 3)
             {
-                yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
+                yield return StartCoroutine(Fade(0, 1));
             }
 
             currentLevel++;
@@ -261,14 +265,14 @@ public class GameManager : MonoBehaviour
                 LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
                 LevelAssets.transform.localPosition = Vector3.zero;
                 LevelAssets.transform.localRotation = Quaternion.identity;
+                UpdateCameraPosition(); // Add this line
             }
 
             SoundManager.Instance.PlayButtonClick();
 
-            // Apply fade effect only if transitioning between levels 1 and 3
             if (currentLevel > 1 && currentLevel <= 3)
             {
-                yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark
+                yield return StartCoroutine(Fade(1, 0));
             }
         }
     }
@@ -311,5 +315,26 @@ public class GameManager : MonoBehaviour
         }
 
         fadeCanvasGroup.alpha = endAlpha;
+    }
+
+    private void UpdateCameraPosition() // Add this method
+    {
+        if (currentLevel < CameraSpawnPositions.Length)
+        {
+            PhotoCamera photoCamera = FindObjectOfType<PhotoCamera>();
+            if (photoCamera != null)
+            {
+                photoCamera.transform.position = CameraSpawnPositions[currentLevel].position;
+                photoCamera.transform.rotation = CameraSpawnPositions[currentLevel].rotation;
+            }
+            else
+            {
+                Debug.LogWarning("PhotoCamera not found in the scene.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No camera spawn position defined for this level.");
+        }
     }
 }
