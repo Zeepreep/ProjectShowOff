@@ -179,13 +179,13 @@ public class GameManager : MonoBehaviour
                 switch (currentLevel)
                 {
                     case 1:
-                        level1CompleteText.text = "Level 1 Complete!";
+                        level1CompleteText.text = "Complete!";
                         break;
                     case 2:
-                        level2CompleteText.text = "Level 2 Complete!";
+                        level2CompleteText.text = "Complete!";
                         break;
                     case 3:
-                        level3CompleteText.text = "Level 3 Complete!";
+                        level3CompleteText.text = "Complete!";
                         break;
                 }
             }
@@ -194,13 +194,13 @@ public class GameManager : MonoBehaviour
                 switch (currentLevel)
                 {
                     case 1:
-                        level1CompleteText.text = "Level 1 Incomplete";
+                        level1CompleteText.text = "Not Completed";
                         break;
                     case 2:
-                        level2CompleteText.text = "Level 2 Incomplete";
+                        level2CompleteText.text = "Not Completed";
                         break;
                     case 3:
-                        level3CompleteText.text = "Level 3 Incomplete";
+                        level3CompleteText.text = "Not Completed";
                         break;
                 }
             }
