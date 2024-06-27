@@ -1,67 +1,108 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class PhotoCamera : MonoBehaviour
 {
-    [Header("Photo Camera Inserts")] public GameObject photoPrefab;
+    [Header("Photo Camera Inserts")]
+    public GameObject photoPrefab;
     public MeshRenderer screenRenderer;
-
     public Transform photoSpawnPosition;
-
-    //public TextMeshProUGUI detectionText;
     public Transform cameraSpawnPosition;
 
-    private float collisionSphereSize = 0.30f;
-
     private Camera photoCamera;
+    private XRGrabInteractable grabInteractable;
+    private Rigidbody rb;
     private float zoomSpeed = 30f;
     private float minFov = 0f;
-    private float maxFox = 180f;
-    
+
+    private float maxFov = 180f;
     private int cameraWidth = 128;
     private int cameraHeight = 64;
 
-    private void Awake()
+    void Awake()
     {
         photoCamera = GetComponentInChildren<Camera>();
-    }
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        rb = GetComponent<Rigidbody>();
 
-    private void Start()
-    {
-        StartCoroutine(CheckZoom());
-        StartCoroutine(DropTest());
+        if (grabInteractable == null)
+        {
+            grabInteractable = gameObject.AddComponent<XRGrabInteractable>();
+        }
+        grabInteractable.selectExited.AddListener(OnCameraDropped);
 
         CreateRenderTexture();
     }
 
-    /// <summary>
-    /// Create the texture for the viewfinder / the screen on the camera
-    /// The photo is extracted from this texture
-    /// </summary>
-    public void CreateRenderTexture()
+    void Start()
     {
-        RenderTexture newTexture =
-            new RenderTexture(cameraWidth, cameraHeight, 8, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
-        newTexture.antiAliasing = 1;
-
-        photoCamera.targetTexture = newTexture;
-        screenRenderer.material.mainTexture = newTexture;
+        StartCoroutine(CheckZoom());
     }
 
-    /// <summary>
-    /// Creates the Photo object and sets its image, also plays the sound.
-    /// Debug text is updated from here too for now.
-    /// </summary>
+    private void OnCameraDropped(SelectExitEventArgs arg)
+    {
+        StartCoroutine(MoveCameraToSpawn());
+    }
+
+    IEnumerator MoveCameraToSpawn()
+    {
+        float duration = 1.0f;  // Duration over which the camera will return to its position
+        float elapsedTime = 0f;
+
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float normalizedTime = elapsedTime / duration;
+
+            // Interpolate position and rotation back to spawn point
+            transform.position = Vector3.Lerp(startPosition, cameraSpawnPosition.position, normalizedTime);
+            transform.rotation = Quaternion.Lerp(startRotation, cameraSpawnPosition.rotation, normalizedTime);
+
+            yield return null;
+        }
+
+        transform.position = cameraSpawnPosition.position;
+        transform.rotation = cameraSpawnPosition.rotation;
+    }
+
+    public IEnumerator CheckZoom()
+    {
+        while (true)
+        {
+            List<InputDevice> devices = new List<InputDevice>();
+            InputDeviceCharacteristics rightControllerCharacteristics =
+                InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+            InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
+
+            if (devices.Count > 0)
+            {
+                InputDevice device = devices[0];
+                Vector2 input;
+                if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out input))
+                {
+                    float zoomInput = input.y;
+
+                    photoCamera.fieldOfView -= zoomInput * zoomSpeed * Time.deltaTime;
+                    photoCamera.fieldOfView = Mathf.Clamp(photoCamera.fieldOfView, minFov, maxFov);
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    private void CreateRenderTexture()
+    {
+        RenderTexture renderTexture = new RenderTexture(cameraWidth, cameraHeight, 24);
+        photoCamera.targetTexture = renderTexture;
+        screenRenderer.material.mainTexture = renderTexture;
+    }
+
     public void TakePhoto()
     {
         Photo newPhoto = CreatePhoto();
@@ -162,75 +203,5 @@ public class PhotoCamera : MonoBehaviour
         {
             Debug.Log("Cat not visible");
         }
-    }
-
-    /// <summary>
-    /// Handles the inputs for zooming in and out.
-    /// </summary>
-    public IEnumerator CheckZoom()
-    {
-        while (true)
-        {
-            List<InputDevice> devices = new List<InputDevice>();
-            InputDeviceCharacteristics rightControllerCharacteristics =
-                InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-            InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
-
-            if (devices.Count > 0)
-            {
-                InputDevice device = devices[0];
-                Vector2 input;
-                if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out input))
-                {
-                    float zoomInput = input.y;
-
-                    photoCamera.fieldOfView -= zoomInput * zoomSpeed * Time.deltaTime;
-                    photoCamera.fieldOfView = Mathf.Clamp(photoCamera.fieldOfView, minFov, maxFox);
-                }
-            }
-
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-    /// <summary>
-    /// Checks if the camera is interacting with a building and teleports it back if it is.
-    /// </summary>
-    IEnumerator DropTest()
-    {
-        while (true)
-        {
-            RaycastHit hit;
-
-            if (Physics.OverlapSphere(transform.position, collisionSphereSize,
-                    LayerMask.GetMask("Building")).Length > 0)
-            {
-//                Debug.Log("Camera hit building");
-                TeleportCameraBack();
-            }
-
-            yield return new WaitForEndOfFrame();
-        }
-    }
-
-    /// <summary>
-    /// Used to teleport the camera back to its spawn position.
-    /// </summary>
-    void TeleportCameraBack()
-    {
-        // Debug.Log("Teleporting camera back");
-
-        Rigidbody rb = GetComponent<Rigidbody>();
-        
-        transform.SetParent(cameraSpawnPosition);
-
-        transform.position = cameraSpawnPosition.position;
-        transform.rotation = cameraSpawnPosition.rotation;
-    }
-    
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, collisionSphereSize);
     }
 }
