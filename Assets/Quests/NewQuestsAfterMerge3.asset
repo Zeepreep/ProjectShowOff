@@ -19,7 +19,8 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
     isActive: 0
-    isCompleted: 1
+    isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: Cat Cult
     questHint: Cat convention in town, how do I get in?
@@ -27,7 +28,8 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
     isActive: 0
-    isCompleted: 1
+    isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: Forklift Certified
     questHint: Cat crew on the job
@@ -36,6 +38,7 @@ MonoBehaviour:
     correspondingLevel: 2
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: Bus Stop
     questHint: 3 buses on top of each other
@@ -44,6 +47,7 @@ MonoBehaviour:
     correspondingLevel: 2
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: "Can It Get Any More Clich\xE9"
     questHint: Where cats get stuck
@@ -52,6 +56,7 @@ MonoBehaviour:
     correspondingLevel: 2
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: Orange Building
     questHint: The cat crosses the bridge
@@ -60,6 +65,7 @@ MonoBehaviour:
     correspondingLevel: 3
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: Dutch Cat
     questHint: Need a ride?
@@ -68,6 +74,7 @@ MonoBehaviour:
     correspondingLevel: 3
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
   - questName: House Party
     questHint: Blowing the roof off
@@ -76,4 +83,5 @@ MonoBehaviour:
     correspondingLevel: 3
     isActive: 0
     isCompleted: 0
+    questPhoto: {fileID: 0}
     strings: []
