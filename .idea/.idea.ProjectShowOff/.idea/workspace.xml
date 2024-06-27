@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e5a8da4-835c-4394-b4ce-3c8f3f0b598b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BOARDcontent 1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BOARDcontent 1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Polaroid Picture.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/project.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +23,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CatScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@14.0.11/Runtime/Lighting/Shadow/HDShadowManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.high-definition@14.0.11/Runtime/Material/Lit/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualeffectgraph@14.0.11/Editor/Core/VFXLibrary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../__saxion_cmgt/Courses/2_4_Project_Showoff/Backup Project/Showoff 2/ProjectShowOff_Backup2/Assets/Scripts/PhotoBoard.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -107,6 +111,7 @@
       <workItem from="1718625569559" duration="1733000" />
       <workItem from="1718799287897" duration="1353000" />
       <workItem from="1719333055637" duration="320000" />
+      <workItem from="1719480553772" duration="74000" />
     </task>
     <servers />
   </component>
