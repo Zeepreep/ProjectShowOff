@@ -23,6 +23,8 @@ public class Photo : MonoBehaviour
     private bool isPhotoTrashed;
     private Collider lastCollidedObject;
 
+    private Texture2D photographDisplayed;
+
 
     private void Awake()
     {
@@ -63,6 +65,7 @@ public class Photo : MonoBehaviour
         imageRenderer.material.mainTexture = texture;
 
         catPictured = pCatPictured;
+        photographDisplayed = texture;
     }
 
     IEnumerator CanBeHung()
@@ -195,6 +198,8 @@ public class Photo : MonoBehaviour
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
             
             transform.parent = lastCollidedObject.transform;
+
+            catPictured.quest.questPhoto = photographDisplayed;
         }
         else
         {

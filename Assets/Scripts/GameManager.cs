@@ -2,32 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Header Debugging")]
-    public bool hideOtherLevelCats;
+    [Header("Header Debugging")] public bool hideOtherLevelCats;
     public bool autoChangeLevels;
 
-    [Header("Level Inputs")]
-    public GameObject LevelAssets;
+    [Header("Level Inputs")] public GameObject LevelAssets;
 
-    [Header("GameObject Inputs")]
-    public GameObject TutorialText;
+    [Header("GameObject Inputs")] public GameObject TutorialText;
     public GameObject PhotoSpots;
     public GameObject[] LevelPositions;
-    
-    [Header("Board Inputs")]
-    public TextMeshProUGUI level1CompleteText;
+
+    [Header("Board Inputs")] public TextMeshProUGUI level1CompleteText;
     public TextMeshProUGUI level2CompleteText;
     public TextMeshProUGUI level3CompleteText;
-    
-    [Header("Other Stuff")]
 
-    public int currentLevel;
+    [Header("Newspaper Prefab")] public GameObject newspaperPrefab;
+
+    public GameObject newspaperPosition;
+
+    [Header("Other Stuff")] public int currentLevel;
 
     [HideInInspector] public List<CatScript> cats;
 
@@ -180,12 +179,16 @@ public class GameManager : MonoBehaviour
                 {
                     case 1:
                         level1CompleteText.text = "Complete!";
+                        level1CompleteText.color = Color.green;
                         break;
                     case 2:
                         level2CompleteText.text = "Complete!";
+                        level2CompleteText.color = Color.green;
                         break;
                     case 3:
                         level3CompleteText.text = "Complete!";
+                        level3CompleteText.color = Color.green;
+
                         break;
                 }
             }
@@ -195,12 +198,15 @@ public class GameManager : MonoBehaviour
                 {
                     case 1:
                         level1CompleteText.text = "Not Completed";
+                        level1CompleteText.color = Color.red;
                         break;
                     case 2:
                         level2CompleteText.text = "Not Completed";
+                        level2CompleteText.color = Color.red;
                         break;
                     case 3:
                         level3CompleteText.text = "Not Completed";
+                        level3CompleteText.color = Color.red;
                         break;
                 }
             }
@@ -245,6 +251,8 @@ public class GameManager : MonoBehaviour
             if (currentLevel >= LevelPositions.Length)
             {
                 Debug.LogWarning("No more levels available");
+
+                SetRandomImagesToNewspaper();
             }
             else
             {
@@ -263,6 +271,32 @@ public class GameManager : MonoBehaviour
                 yield return StartCoroutine(Fade(1, 0)); // Fade from white to dark
             }
         }
+    }
+
+    public void SetRandomImagesToNewspaper()
+    {
+        List<Texture2D> allPictures = new List<Texture2D>();
+        foreach (CatScript cat in cats)
+        {
+            if (cat.quest != null && cat.quest.questPhoto != null)
+            {
+                allPictures.Add(cat.quest.questPhoto);
+            }
+        }
+
+        Texture2D[] randomPictures = new Texture2D[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            int randomIndex = UnityEngine.Random.Range(0, allPictures.Count);
+
+            randomPictures[i] = allPictures[randomIndex];
+            allPictures.RemoveAt(randomIndex);
+        }
+
+        GameObject newspaperSpawned = Instantiate(newspaperPrefab, newspaperPosition.transform.position,
+            newspaperPosition.transform.rotation);
+        newspaperSpawned.GetComponent<Newspaper>().SetImage(randomPictures[0], randomPictures[1], randomPictures[2]);
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)

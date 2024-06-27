@@ -19,7 +19,7 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
     isActive: 0
-    isCompleted: 0
+    isCompleted: 1
     strings: []
   - questName: Cat Cult
     questHint: Cat convention in town, how do I get in?
@@ -27,7 +27,7 @@ MonoBehaviour:
     questPhotoSpot: {fileID: 0}
     correspondingLevel: 1
     isActive: 0
-    isCompleted: 0
+    isCompleted: 1
     strings: []
   - questName: Forklift Certified
     questHint: Cat crew on the job

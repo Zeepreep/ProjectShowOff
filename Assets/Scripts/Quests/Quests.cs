@@ -13,6 +13,7 @@ public class Quest
     public int correspondingLevel;
     public bool isActive;
     public bool isCompleted;
+    public Texture2D questPhoto;
 
     public List<GameObject> strings = new List<GameObject>();
 }
