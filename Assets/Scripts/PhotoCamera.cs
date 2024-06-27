@@ -27,6 +27,9 @@ public class PhotoCamera : MonoBehaviour
     private float zoomSpeed = 30f;
     private float minFov = 0f;
     private float maxFox = 180f;
+    
+    private int cameraWidth = 128;
+    private int cameraHeight = 64;
 
     private void Awake()
     {
@@ -48,8 +51,8 @@ public class PhotoCamera : MonoBehaviour
     public void CreateRenderTexture()
     {
         RenderTexture newTexture =
-            new RenderTexture(512, 256, 32, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
-        newTexture.antiAliasing = 4;
+            new RenderTexture(cameraWidth, cameraHeight, 8, RenderTextureFormat.Default, RenderTextureReadWrite.sRGB);
+        newTexture.antiAliasing = 1;
 
         photoCamera.targetTexture = newTexture;
         screenRenderer.material.mainTexture = newTexture;
@@ -119,8 +122,8 @@ public class PhotoCamera : MonoBehaviour
         camera.Render();
         RenderTexture.active = camera.targetTexture;
 
-        Texture2D photo = new Texture2D(256, 256, TextureFormat.RGB24, false);
-        photo.ReadPixels(new Rect(128, 0, 256, 256), 0, 0);
+        Texture2D photo = new Texture2D(cameraWidth / 2, cameraHeight, TextureFormat.RGB24, false);
+        photo.ReadPixels(new Rect(cameraHeight / 2, 0, cameraWidth / 2, cameraHeight), 0, 0);
         photo.Apply();
 
         return photo;
