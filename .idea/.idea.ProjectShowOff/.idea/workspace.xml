@@ -6,16 +6,429 @@
   <component name="ChangeListManager">
     <list default="true" id="3e5a8da4-835c-4394-b4ce-3c8f3f0b598b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectShowOff/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assetss/Models/Map.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assetss/Scripts/PedestrianSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assetss/Scripts/PedestrianSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models/Buildings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models/Buildings/building 2.ma" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models/Buildings/building 2.ma.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models/Buildings/edith saxion building.ma" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Models/Buildings/edith saxion building.ma.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Lets Make a VR Game/Prefabs/Buildings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Scifi pistol Mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Scifi pistol Mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Scifi pistol Mat_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Scifi pistol Mat_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NewTreeShit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NewTreeShit.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/project.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestsEditorWindow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/project/Sky and Fog Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/project/Sky and Fog Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/Photo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/Photo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PhotoSpot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PhotoSpot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestApplier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Quests/QuestApplier.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_Main_Mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_Main_Mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_Main_Texture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_Main_Texture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_WhitePlane_Mat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Materials/sptp_WhitePlane_Mat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_03.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_03.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_04.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_04.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_05.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_05.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_06.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_06.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_07.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_07.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_08.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_08.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_09.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_09.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_10.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_10.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_11.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_11.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_12.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_12.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_13.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_13.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_14.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_14.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_15.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_15.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_16.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_16.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_17.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_17.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_18.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_18.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_19.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_19.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_20.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_20.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_21.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_21.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_22.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_22.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_23.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_23.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_24.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_24.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_25.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_25.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_26.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_26.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_27.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_27.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_28.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_28.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_29.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_29.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_30.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_30.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_31.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_31.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_32.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_32.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_33.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_33.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_34.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_34.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_35.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Buildings/sptp_building_35.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_bush_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_bush_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_bush_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_bush_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_stone_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_tree_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_tree_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_tree_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/Nature/sptp_tree_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_asphalt_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_asphalt_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_grass_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_grass_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_03.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_03.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_04.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_04.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_05.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_05.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_06.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_06.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_07.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_07.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_08.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_08.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_09.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_09.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_10.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_10.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_11.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_11.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_12.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_12.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_13.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_13.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_14.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_14.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_15.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_road_segment_15.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_03.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_sidewalk_segment_03.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_street_concrete_01.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_street_concrete_01.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_street_concrete_02.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Meshes/RoadSegments/sptp_street_concrete_02.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_04.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_04.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_05.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_05.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_06.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_06.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_07.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_07.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_08.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_08.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_09.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_09.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_10.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_10.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_11.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_11.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_12.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_12.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_13.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_13.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_14.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_14.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_15.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_15.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_16.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_16.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_17.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_17.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_18.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_18.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_19.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_19.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_20.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_20.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_21.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_21.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_22.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_22.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_23.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_23.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_24.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_24.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_25.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_25.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_26.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_26.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_27.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_27.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_28.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_28.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_29.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_29.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_30.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_30.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_31.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_31.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_32.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_32.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_33.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_33.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_34.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_34.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_35.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Buildings/sptp_building_35.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_bush_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_bush_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_bush_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_bush_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_stone_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_stone_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_stone_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_stone_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_tree_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_tree_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_tree_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Nature/sptp_tree_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_04.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_air_conditioning_04.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bench_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bench_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_billboard_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bin_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bin_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bin_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_bin_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_dumpster_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_dumpster_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_electrical_panel_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_electrical_panel_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_electrical_panel_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_electrical_panel_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_fire_hydrant_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_fire_hydrant_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_mail_box_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_mail_box_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_street_light_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_street_light_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_street_light_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_street_light_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_traffic_light_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/Props/sptp_traffic_light_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_asphalt_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_asphalt_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_grass_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_grass_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_04.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_04.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_05.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_05.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_06.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_06.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_07.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_07.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_08.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_08.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_09.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_09.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_10.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_10.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_11.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_11.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_12.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_12.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_13.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_13.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_14.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_14.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_15.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_15.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_16.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_road_segment_16.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_02.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_02.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_03.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_sidewalk_segment_03.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_street_concrete_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Prefabs/RoadSegments/sptp_street_concrete_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/PostEffectsBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/PostEffectsBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/Quads.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/Quads.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/SunShafts.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Scripts/SunShafts.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Shaders/SimpleClear.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Shaders/SimpleClear.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Shaders/SunShaftsComposite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Standard Assets/Effects/ImageEffects/Shaders/SunShaftsComposite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Textures/sptp_Main_Texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SimplePoly - Town Pack/Textures/sptp_Main_Texture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_AO.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_AO.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_albedo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_albedo.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_metallic.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_metallic.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_roughness.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Fingers_MAT_roughness.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_AO.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_AO.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_albedo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_albedo.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_emissive.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_emissive.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_metallic.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_metallic.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_roughness.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/Hand_MAT_roughness.jpeg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/TerminatorFingers.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/TerminatorFingers.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/TerminatorPalm.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Material/TerminatorPalm.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Prefabs/Left Terminator.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Prefabs/Left Terminator.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Prefabs/Right Terminator.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Prefabs/Right Terminator.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Terminator Hand.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerminatorHand/Terminator Hand.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/360 Milky Way Panorama.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/360 Milky Way Panorama.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Circle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/FastForward1Tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/FastForward1Tool.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/FastForward2Tool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/FastForward2Tool.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Grass.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Grid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Grid.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/IntersectionBM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/IntersectionBM.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/PauseTool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/PauseTool.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/PlayTool.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/PlayTool.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Diffuse_Darker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Diffuse_Darker.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Rock_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_BaseColor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_BaseColor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Sci Fi Pistol Textures/sci-fi_pistol_low_uv_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/StopSign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/StopSign.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/human/source_files/human.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/human/source_files/human.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
@@ -65,6 +478,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../__saxion_cmgt/Courses/2_4_Project_Showoff/Build2\Capture.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Milan\Documents\__saxion_cmgt\Courses\2_4_Project_Showoff\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.28f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Milan\Documents\GitHub\ProjectShowOff -debugCodeOptimization" />
@@ -122,6 +543,9 @@
       <workItem from="1719333055637" duration="320000" />
       <workItem from="1719480553772" duration="74000" />
       <workItem from="1719560501550" duration="597000" />
+      <workItem from="1719563519027" duration="5560000" />
+      <workItem from="1719575752173" duration="5674000" />
+      <workItem from="1719592180760" duration="1858000" />
     </task>
     <servers />
   </component>

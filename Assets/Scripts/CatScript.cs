@@ -12,12 +12,13 @@ public class CatScript : MonoBehaviour
     
     public int catCorrespondingLevel;
     
-    
     public void CatPhotographed()
     {
         SoundManager.Instance.PlayCatMeow(transform);
 
-        Instantiate(smokeEffect, transform.position, Quaternion.identity);
+        VisualEffect poof = Instantiate(smokeEffect, transform.position, Quaternion.identity);
+        Destroy(poof, 2f);
+        
 
         if (quest != null)
         {

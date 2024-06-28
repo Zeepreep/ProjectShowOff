@@ -29,10 +29,10 @@ namespace Management
             }
         }
 
-        void Start() 
+        /*void Start() 
         {
             ApplySettings(defaultQuests);
-        }
+        }*/
     
 
         public void ApplySettings(Quests quests)

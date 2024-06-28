@@ -24,13 +24,13 @@ public class PedestrianSpawner : MonoBehaviour
     {
         if (currentPedestrianCount >= maxPedestrians)
         {
-            Debug.Log("Maximum number of pedestrians reached.");
+          //  Debug.Log("Maximum number of pedestrians reached.");
             return;
         }
 
         if (pedestrianPrefabs.Length == 0)
         {
-            Debug.LogWarning("No pedestrian prefabs assigned!");
+          //  Debug.LogWarning("No pedestrian prefabs assigned!");
             return;
         }
 

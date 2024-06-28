@@ -9,13 +9,13 @@ using UnityEngine;
 public class PhotoSpot : MonoBehaviour
 {
     public GameObject photoSphere;
-
+    
     [HideInInspector] public TextMeshProUGUI questNameText;
     [HideInInspector] public TextMeshProUGUI questHintText;
     [HideInInspector] public TextMeshProUGUI questCompletedText;
 
     [HideInInspector] public Quest quest;
-
+    public CatScript questCat;
     private Canvas canvas;
 
     private void Awake()
@@ -24,6 +24,8 @@ public class PhotoSpot : MonoBehaviour
         {
             Debug.LogWarning("PhotoSphere is not assigned to the PhotoSpot");
         }
+        
+        quest.questCat = questCat;
     }
 
     public void CreateTexts()

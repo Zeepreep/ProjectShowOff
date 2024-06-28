@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("More than one GameSettingsApplier in the scene");
+            Debug.LogWarning("More than one GameManager in the scene");
             Destroy(this);
         }
     }
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(StartTutorialAudio());
     }
-
+    
     private IEnumerator StartTutorialAudio()
     {
         yield return new WaitForSeconds(1);
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         {
             if (cat.quest != null && cat.catCorrespondingLevel == currentLevel)
             {
-                if (!cat.quest.isCompleted)
+                if (!cat.quest.isCompleted || cat.quest.questPhoto == null)
                 {
                     return false;
                 }
@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
             if (IsLevelCompleted())
             {
                 currentLevel++;
+                levelCompleteStatus();
             }
 
             yield return new WaitForSeconds(0.2f);
@@ -160,6 +161,7 @@ public class GameManager : MonoBehaviour
     public void SetLevel(int level)
     {
         currentLevel = level;
+        levelCompleteStatus();
     }
 
     public void NextLevelButton()
@@ -177,27 +179,28 @@ public class GameManager : MonoBehaviour
 
     public void levelCompleteStatus()
     {
+        Debug.Log("Checking level completion status for level " + currentLevel);
+        
         if (IsLevelCompleted())
         {
+            Debug.Log("Level " + currentLevel + " is completed");
+
             switch (currentLevel)
             {
                 case 1:
                     level1CompleteText.text = "Complete!";
                     level1CompleteText.color = Color.green;
                     SoundManager.Instance.PlayLevel1VoiceOver();
-
                     break;
                 case 2:
                     level2CompleteText.text = "Complete!";
                     level2CompleteText.color = Color.green;
                     SoundManager.Instance.PlayLevel2VoiceOver();
-
                     break;
                 case 3:
                     level3CompleteText.text = "Complete!";
                     level3CompleteText.color = Color.green;
                     SoundManager.Instance.PlayLevel3VoiceOver();
-
                     break;
             }
         }
@@ -221,15 +224,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Debug.Log("Going to next level through Key Press");
-            StartCoroutine(FadeAndLoadNextLevel());
-        }
-    }
-
     private IEnumerator FadeAndLoadNextLevel()
     {
         if (currentLevel == 0)
@@ -249,18 +243,16 @@ public class GameManager : MonoBehaviour
                 SoundManager.Instance.PlayAudioLevelTransition();
 
                 yield return StartCoroutine(Fade(0, 1));
-                
 
                 PhotoCamera CameraInScene = FindObjectOfType<PhotoCamera>();
 
                 CameraInScene.transform.position = CameraInScene.cameraSpawnPosition.transform.position;
                 CameraInScene.transform.rotation = CameraInScene.cameraSpawnPosition.transform.rotation;
-
-                currentLevel++;
             }
 
+            Debug.Log("Level " + currentLevel);
 
-            if (currentLevel >= LevelPositions.Length)
+            if (currentLevel >= LevelPositions.Length - 1)
             {
                 Debug.LogWarning("No more levels available");
                 SetRandomImagesToNewspaper();
@@ -269,9 +261,18 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Level " + currentLevel + " activated");
 
-                LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
-                LevelAssets.transform.localPosition = Vector3.zero;
-                LevelAssets.transform.localRotation = Quaternion.identity;
+                currentLevel++;
+
+                if (currentLevel < LevelPositions.Length)
+                {
+                    LevelAssets.transform.parent = LevelPositions[currentLevel].transform;
+                    LevelAssets.transform.localPosition = Vector3.zero;
+                    LevelAssets.transform.localRotation = Quaternion.identity;
+                }
+                else
+                {
+                    Debug.LogWarning("No more LevelPositions available");
+                }
             }
 
             SoundManager.Instance.PlayButtonClick();
@@ -310,8 +311,15 @@ public class GameManager : MonoBehaviour
             {
                 int randomIndex = UnityEngine.Random.Range(0, allPictures.Count);
 
-                randomPictures[i] = allPictures[randomIndex];
-                allPictures.RemoveAt(randomIndex);
+                if (randomIndex < allPictures.Count)
+                {
+                    randomPictures[i] = allPictures[randomIndex];
+                    allPictures.RemoveAt(randomIndex);
+                }
+                else
+                {
+                    Debug.LogWarning("No more pictures available");
+                }
             }
 
             GameObject newspaperSpawned = Instantiate(newspaperPrefab, newspaperPosition.transform.position,

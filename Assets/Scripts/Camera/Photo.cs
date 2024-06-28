@@ -88,8 +88,6 @@ public class Photo : MonoBehaviour
                 {
                     sphereRenderer = lastCollidedObject.GameObject().GetComponent<Renderer>();
                     sphereRenderer.material = highlightMaterial;
-                    
-                 //   Debug.Log("Highlighting sphere");
                 }
                 else
                 {
@@ -100,16 +98,15 @@ public class Photo : MonoBehaviour
                 {
                     isPhotoHangable = true;
                     sphereRenderer.material = highlightMaterial;
-                    
-               //     Debug.Log("Photo is hangable");
                 }
                 else
                 {
                     isPhotoHangable = false;
                     sphereRenderer.material = denyMaterial;
                 }
-                
             }
+
+
             else if (Physics.OverlapSphere(transform.position, pictureOverlapSize,
                          LayerMask.GetMask("TrashSpots")).Length > 0)
             {
@@ -121,8 +118,8 @@ public class Photo : MonoBehaviour
                 isPhotoTrashed = true;
 
                 sphereRenderer.material = denyMaterial;
-                
-             //   Debug.Log("Photo is trashed");
+
+                //   Debug.Log("Photo is trashed");
             }
             else
             {
@@ -134,7 +131,7 @@ public class Photo : MonoBehaviour
 
                 isPhotoHangable = false;
                 isPhotoTrashed = false;
-                
+
 //                Debug.Log("Photo is not hangable or trashed");
             }
 
@@ -148,15 +145,15 @@ public class Photo : MonoBehaviour
         SoundManager.Instance.PlayConstructionSounds(transform);
 
         float elapsedTime = 0;
-        Vector3 startPosition = 
-            new Vector3(transform.position.x, transform.position.y + 0.04f, transform.position.z); 
+        Vector3 startPosition =
+            new Vector3(transform.position.x, transform.position.y + 0.04f, transform.position.z);
         Vector3 endPosition =
-            new Vector3(transform.position.x, transform.position.y - 0.16f, transform.position.z); 
+            new Vector3(transform.position.x, transform.position.y - 0.16f, transform.position.z);
 
-        while (elapsedTime < 1f) 
+        while (elapsedTime < 1f)
         {
             transform.position =
-                Vector3.Lerp(startPosition, endPosition, elapsedTime / 2f); 
+                Vector3.Lerp(startPosition, endPosition, elapsedTime / 2f);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -168,7 +165,6 @@ public class Photo : MonoBehaviour
 
     private void OnReleased()
     {
-       
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 hangOffset = new Vector3(90, 180, 0);
 
@@ -178,9 +174,9 @@ public class Photo : MonoBehaviour
         {
             transform.position = lastCollidedObject.transform.position;
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
-            
+
             SoundManager.Instance.PlayPaperShredding(transform);
-            
+
             StartCoroutine(ShredderMovement());
         }
         else if (isPhotoHangable)
@@ -190,27 +186,26 @@ public class Photo : MonoBehaviour
 
             transform.position = lastCollidedObject.transform.position;
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
-            
+
             SoundManager.Instance.PlayPictureHung(transform);
+
             
-            GameManager.Instance.levelCompleteStatus();
-
-            Debug.Log(lastCollidedObject.name);
-
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().quest.isCompleted = true;
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().CreateTexts();
 
             lastCollidedObject.GameObject().GetComponentInParent<PhotoSpot>().photoSphere.SetActive(false);
-            
+
             transform.parent = lastCollidedObject.transform.parent;
 
             catPictured.quest.questPhoto = photographDisplayed;
+            
+            GameManager.Instance.levelCompleteStatus();
         }
-        
+
 
         rb.useGravity = true;
     }
-    
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

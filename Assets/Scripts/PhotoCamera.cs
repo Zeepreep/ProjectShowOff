@@ -20,8 +20,8 @@ public class PhotoCamera : MonoBehaviour
     private float minFov = 0f;
     private float maxFov = 180f;
     
-    private int cameraWidth = 256;
-    private int cameraHeight = 128;
+    private int cameraWidth = 512;
+    private int cameraHeight = 256;
 
     void Awake()
     {
@@ -109,7 +109,6 @@ public class PhotoCamera : MonoBehaviour
         SetPhotoImage(newPhoto);
         //UpdateDebugText(newPhoto);
 
-        // Check if the pictured cat is associated with an active quest
         CatScript picturedCat = GetPicturedCat();
         if (picturedCat != null && picturedCat.quest != null)
         {
