@@ -168,8 +168,7 @@ public class Photo : MonoBehaviour
 
     private void OnReleased()
     {
-        Debug.Log("Let Photograph Go");
-        
+       
         Rigidbody rb = GetComponent<Rigidbody>();
         Vector3 hangOffset = new Vector3(90, 180, 0);
 
@@ -193,6 +192,8 @@ public class Photo : MonoBehaviour
             transform.rotation = lastCollidedObject.transform.rotation * Quaternion.Euler(hangOffset);
             
             SoundManager.Instance.PlayPictureHung(transform);
+            
+            GameManager.Instance.levelCompleteStatus();
 
             Debug.Log(lastCollidedObject.name);
 
@@ -205,10 +206,7 @@ public class Photo : MonoBehaviour
 
             catPictured.quest.questPhoto = photographDisplayed;
         }
-        else
-        {
-            Debug.Log("nothing to do with photo, doing nothing");
-        }
+        
 
         rb.useGravity = true;
     }

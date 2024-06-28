@@ -62,13 +62,20 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(ActivateCats());
-        StartCoroutine(levelCompleteStatus());
         PopulateLists();
 
         if (autoChangeLevels)
         {
             StartCoroutine(AutoChangeLevel());
         }
+
+        StartCoroutine(StartTutorialAudio());
+    }
+
+    private IEnumerator StartTutorialAudio()
+    {
+        yield return new WaitForSeconds(1);
+        SoundManager.Instance.PlayTutorialVoiceOver();
     }
 
     void PopulateLists()
@@ -168,49 +175,49 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator levelCompleteStatus()
+    public void levelCompleteStatus()
     {
-        while (true)
+        if (IsLevelCompleted())
         {
-            if (IsLevelCompleted())
+            switch (currentLevel)
             {
-                switch (currentLevel)
-                {
-                    case 1:
-                        level1CompleteText.text = "Complete!";
-                        level1CompleteText.color = Color.green;
-                        break;
-                    case 2:
-                        level2CompleteText.text = "Complete!";
-                        level2CompleteText.color = Color.green;
-                        break;
-                    case 3:
-                        level3CompleteText.text = "Complete!";
-                        level3CompleteText.color = Color.green;
+                case 1:
+                    level1CompleteText.text = "Complete!";
+                    level1CompleteText.color = Color.green;
+                    SoundManager.Instance.PlayLevel1VoiceOver();
 
-                        break;
-                }
+                    break;
+                case 2:
+                    level2CompleteText.text = "Complete!";
+                    level2CompleteText.color = Color.green;
+                    SoundManager.Instance.PlayLevel2VoiceOver();
+
+                    break;
+                case 3:
+                    level3CompleteText.text = "Complete!";
+                    level3CompleteText.color = Color.green;
+                    SoundManager.Instance.PlayLevel3VoiceOver();
+
+                    break;
             }
-            else
+        }
+        else
+        {
+            switch (currentLevel)
             {
-                switch (currentLevel)
-                {
-                    case 1:
-                        level1CompleteText.text = "Not Completed";
-                        level1CompleteText.color = Color.red;
-                        break;
-                    case 2:
-                        level2CompleteText.text = "Not Completed";
-                        level2CompleteText.color = Color.red;
-                        break;
-                    case 3:
-                        level3CompleteText.text = "Not Completed";
-                        level3CompleteText.color = Color.red;
-                        break;
-                }
+                case 1:
+                    level1CompleteText.text = "Not Completed";
+                    level1CompleteText.color = Color.red;
+                    break;
+                case 2:
+                    level2CompleteText.text = "Not Completed";
+                    level2CompleteText.color = Color.red;
+                    break;
+                case 3:
+                    level3CompleteText.text = "Not Completed";
+                    level3CompleteText.color = Color.red;
+                    break;
             }
-
-            yield return new WaitForSeconds(0.2f);
         }
     }
 
@@ -237,40 +244,25 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // Apply fade effect only if transitioning between levels 1 and 3
             if (currentLevel >= 1 && currentLevel < 3)
             {
                 SoundManager.Instance.PlayAudioLevelTransition();
-                
-                yield return StartCoroutine(Fade(0, 1)); // Fade from current alpha to white
 
-                switch (currentLevel)
-                {
-                    case 1:
-                        SoundManager.Instance.PlayLevel1VoiceOver();
-                        break;  
-                    
-                    case 2:
-                        SoundManager.Instance.PlayLevel2VoiceOver();
-                        break;
-                    
-                    case 3:
-                        SoundManager.Instance.PlayLevel3VoiceOver();
-                        break;
-                }
+                yield return StartCoroutine(Fade(0, 1));
+                
 
                 PhotoCamera CameraInScene = FindObjectOfType<PhotoCamera>();
 
                 CameraInScene.transform.position = CameraInScene.cameraSpawnPosition.transform.position;
                 CameraInScene.transform.rotation = CameraInScene.cameraSpawnPosition.transform.rotation;
+
+                currentLevel++;
             }
 
-            currentLevel++;
 
             if (currentLevel >= LevelPositions.Length)
             {
                 Debug.LogWarning("No more levels available");
-
                 SetRandomImagesToNewspaper();
             }
             else
@@ -293,29 +285,41 @@ public class GameManager : MonoBehaviour
 
     public void SetRandomImagesToNewspaper()
     {
+        Debug.Log("Spawning Newspaper");
+
         List<Texture2D> allPictures = new List<Texture2D>();
         foreach (CatScript cat in cats)
         {
             if (cat.quest != null && cat.quest.questPhoto != null)
             {
                 allPictures.Add(cat.quest.questPhoto);
-                Debug.Log("Added " + cat.quest.questPhoto.name + " to the possible newspaper pictures list.");
+                Debug.Log("Added photo from quest " + cat.quest.questName +
+                          " to the possible newspaper pictures list.");
             }
         }
 
         Texture2D[] randomPictures = new Texture2D[3];
 
-        for (int i = 0; i < 3; i++)
+        if (randomPictures.Length > allPictures.Count)
         {
-            int randomIndex = UnityEngine.Random.Range(0, allPictures.Count);
-
-            randomPictures[i] = allPictures[randomIndex];
-            allPictures.RemoveAt(randomIndex);
+            Debug.LogWarning("Not enough pictures to fill the newspaper");
         }
+        else
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, allPictures.Count);
 
-        GameObject newspaperSpawned = Instantiate(newspaperPrefab, newspaperPosition.transform.position,
-            newspaperPosition.transform.rotation);
-        newspaperSpawned.GetComponent<Newspaper>().SetImage(randomPictures[0], randomPictures[1], randomPictures[2]);
+                randomPictures[i] = allPictures[randomIndex];
+                allPictures.RemoveAt(randomIndex);
+            }
+
+            GameObject newspaperSpawned = Instantiate(newspaperPrefab, newspaperPosition.transform.position,
+                newspaperPosition.transform.rotation, newspaperPosition.transform);
+
+            newspaperSpawned.GetComponent<Newspaper>()
+                .SetImage(randomPictures[0], randomPictures[1], randomPictures[2]);
+        }
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)

@@ -12,7 +12,6 @@ public class Newspaper : MonoBehaviour
     public MeshRenderer image2 = null;
     public MeshRenderer image3 = null;
     
-    [Header("Interaction Materials")]
     private Collider currentCollider = null;
     private ApplyPhysics applyPhysics = null;
     private XRGrabInteractable grabInteractable;
@@ -28,14 +27,21 @@ public class Newspaper : MonoBehaviour
     public void SetImage(Texture2D image1Texture, Texture2D image2Texture, 
                             Texture2D image3Texture)
     {
-        image1.material.color = Color.white;
-        image1.material.mainTexture = image1Texture;
-        
-        image2.material.color = Color.white;
-        image2.material.mainTexture = image2Texture;
-        
-        image3.material.color = Color.white;
-        image3.material.mainTexture = image3Texture;
+        if (image1 == null || image2 == null || image3 == null)
+        {
+            Debug.LogWarning("Image1, Image2, or Image3 is not assigned to the Newspaper");
+        }
+        else
+        {
+            image1.material.color = Color.white;
+            image1.material.mainTexture = image1Texture;
+            
+            image2.material.color = Color.white;
+            image2.material.mainTexture = image2Texture;
+            
+            image3.material.color = Color.white;
+            image3.material.mainTexture = image3Texture;
+        }
     }
     
     void OnDrawGizmos()
