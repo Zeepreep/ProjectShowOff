@@ -41,8 +41,15 @@ public class Vehicle : MonoBehaviour
 
     void Awake()
     {
-        body.materials[bodyMaterialIndex] = new Material(body.materials[bodyMaterialIndex]);
-        body.materials[bodyMaterialIndex].color = new Color(Random.Range(0.4f, 0.8f), Random.Range(0.4f, 0.8f), Random.Range(0.4f, 0.8f));
+        if (body != null && body.materials.Length > bodyMaterialIndex)
+        {
+            body.materials[bodyMaterialIndex] = new Material(body.materials[bodyMaterialIndex]);
+            body.materials[bodyMaterialIndex].color = new Color(Random.Range(0.4f, 0.8f), Random.Range(0.4f, 0.8f), Random.Range(0.4f, 0.8f));
+        }
+        else
+        {
+            Debug.LogWarning("Body or body material index is not set properly.");
+        }
 
         randomID = Random.Range(10000, 99999);
         rigid = GetComponent<Rigidbody>();
@@ -180,13 +187,16 @@ public class Vehicle : MonoBehaviour
 
     void UpdateSteeringAim()
     {
-        steeringAim2.transform.LookAt(currentTarget.transform.position);
-        Vector3 pos = steeringAim.transform.position;
-        pos.y = currentTarget.transform.position.y;
-        steeringAim.transform.position = pos;
-        Vector3 rot = steeringAim2.transform.localEulerAngles;
-        rot.x = 0;
-        steeringAim2.transform.localEulerAngles = rot;
+        if (steeringAim != null && steeringAim2 != null && currentTarget != null)
+        {
+            steeringAim2.transform.LookAt(currentTarget.transform.position);
+            Vector3 pos = steeringAim.transform.position;
+            pos.y = currentTarget.transform.position.y;
+            steeringAim.transform.position = pos;
+            Vector3 rot = steeringAim2.transform.localEulerAngles;
+            rot.x = 0;
+            steeringAim2.transform.localEulerAngles = rot;
+        }
     }
 
     void HandleSteering()
